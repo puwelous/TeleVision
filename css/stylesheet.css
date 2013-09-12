@@ -206,3 +206,132 @@ html, body {
     text-transform: uppercase;
     
 }
+/* project info section */
+#section_project_info {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff  url('./images/project_info_background.png') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
+}
+
+/* contact section */
+
+#section_contact {
+
+    position: relative;
+    width: 100%;
+    height: 65%;
+    background: #ffffff  url('./images/contact_background.jpg') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
+}
+/*
+@font-face
+{
+font-family: "Helvetica Neue";
+src: url(HelveticaNeue.dfont);
+}*/
+
+/*** common class for each title of a section ***/
+
+/* black version */
+.section_title_bl {
+    position: relative;
+    width: 50%;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    padding-top: 10%;
+    margin-left: 15%;
+}
+
+/* white version */
+.section_title_wh {
+    position: relative;
+    width: 50%;
+    color: white;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    padding-top: 10%;
+    margin-left: 15%;
+=======
+=======
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
+    padding-top: 5%;
+    margin-left: 15%;
+
+}
+
+/* galery section */
+
+#section_gallery {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    /*background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
+<<<<<<< HEAD
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
+}
+
+#gallery_heading {
+    position: relative;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    padding-top: 10%;
+    margin-left: 15%;
+}
+
+=======
+}
+
+#gallery_heading {
+    position: relative;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    padding-top: 10%;
+    margin-left: 15%;
+}
+
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
+#gallery {
+    padding-top: 5%;
+    margin-left: 13%;
+}
+
+#gallery .gallery_item
+  {
+  margin:2px;
+  height:auto;
+  width:auto;
+  float:left;
+  text-align:center;
+  margin-left: 2%;
+  }
+  
+#gallery .gallery_item gallery_item
+  {
+  display:inline;
+  margin:10px;
+  }
+
+#gallery .desc
+  {
+  text-align:center;
+  font-weight:normal;
+  font-size: 75%;
+  width:120px;
+  margin:2px;
+  color: black;
+  margin-left: 15%;
+  margin-bottom: 15%;
+  }
