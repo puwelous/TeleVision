@@ -11,9 +11,7 @@ root {
 }
 
 * {
-
     margin: 0px 0px;
-    /*padding: 0 0;*/
 }
 
 html, body {
@@ -24,6 +22,11 @@ html, body {
 
 .page_section {
     width: 100%;
+}
+
+.page_section_wrapper {
+    padding-top: 10%;
+    padding-left: 15%;
 }
 
 #section_welcome {
@@ -141,18 +144,18 @@ html, body {
 }
 
 #sticky_menu .sticky_menu_item {
-    
+
     position:relative;
-    
+
     float: left;
     width: 60px;
     height: 60px;
-    
+
     margin: auto 5px;
 
     border-radius: 50%;
     border: white solid 3px;
-    
+
     text-align: center;
 }
 
@@ -164,9 +167,9 @@ html, body {
     left: 6px;    
     width: 50px;
     height: 50px;
-    
+
     font-size: 120%;
-    
+
     border-radius: 50%;
     border-left: white solid 3px;
 }
@@ -179,9 +182,9 @@ html, body {
     right: 6px;
     width: 50px;
     height: 50px;
-    
+
     font-size: 120%;
-    
+
     border-radius: 50%;
     border-right: white solid 3px;
 }
@@ -201,14 +204,23 @@ html, body {
     top: 50%;
     margin-top: -1em;
     font-size: 60%;
-    
+
     color: white;
     text-transform: uppercase;
-    
+
+}
+
+/*project info section*/
+#section_project_info {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff  url('./images/project_info_background.png') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
 }
 
 /* contact section */
-
 #section_contact {
 
     position: relative;
@@ -218,25 +230,28 @@ html, body {
     background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 }
-/*
-@font-face
-{
-font-family: "Helvetica Neue";
-src: url(HelveticaNeue.dfont);
-}*/
 
-#contact_heading {
+/*** section heading titles ***/
+/*white*/
+.section_title_wh {
     position: relative;
     color: white;
     font-family: "Helvetica Neue", sans-serif;/* what font?? */
     font-size:200%;
-    padding-top: 5%;
-    margin-left: 15%;
+    margin-bottom: 5%;
 
 }
+/*black*/
+.section_title_bl {
+    position: relative;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    margin-bottom: 5%;
+}
 
-/* galery section */
-
+/*** galery section ***/
+/* TODO: update style by Mitken */
 #section_gallery {
 
     position: relative;
@@ -252,39 +267,39 @@ src: url(HelveticaNeue.dfont);
     color: black;
     font-family: "Helvetica Neue", sans-serif;/* what font?? */
     font-size:200%;
-    padding-top: 10%;
-    margin-left: 15%;
+    /*    padding-top: 10%;
+        margin-left: 15%;*/
 }
 
 #gallery {
-    padding-top: 5%;
-    margin-left: 13%;
+    /*    padding-top: 5%;
+        margin-left: 13%;*/
 }
 
 #gallery .gallery_item
-  {
-  margin:2px;
-  height:auto;
-  width:auto;
-  float:left;
-  text-align:center;
-  margin-left: 2%;
-  text-align:center;
-  }
-  
+{
+    margin:2px;
+    height:auto;
+    width:auto;
+    float:left;
+    text-align:center;
+    margin-left: 2%;
+    text-align:center;
+}
+
 #gallery .gallery_item
-  {
-  display:inline;
-  margin:10px;
-  text-align:center;
-  }
+{
+    display:inline;
+    margin:10px;
+    text-align:center;
+}
 
 #gallery .gallery_item .desc
-  {
-  text-align:center;
-  font-weight:normal;
-  font-size: 75%;
-  width:120px;
-  margin:2px;
-  color: black;
-  }
+{
+    text-align:center;
+    font-weight:normal;
+    font-size: 75%;
+    width:120px;
+    margin:2px;
+    color: black;
+}
