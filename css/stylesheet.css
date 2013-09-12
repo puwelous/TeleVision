@@ -206,19 +206,6 @@ html, body {
     text-transform: uppercase;
     
 }
-<<<<<<< HEAD
-/* project info section */
-#section_project_info {
-
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: #ffffff  url('./images/project_info_background.png') no-repeat left top;
-    background-position: 50% 50%; /* for moving the background up */
-    background-size:cover;
-}
-=======
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 
 /* contact section */
 
@@ -238,41 +225,11 @@ font-family: "Helvetica Neue";
 src: url(HelveticaNeue.dfont);
 }*/
 
-<<<<<<< HEAD
-/*** common class for each title of a section ***/
-
-/* black version */
-.section_title_bl {
-    position: relative;
-    width: 50%;
-    color: black;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
-    padding-top: 10%;
-    margin-left: 15%;
-}
-
-/* white version */
-.section_title_wh {
-    position: relative;
-    width: 50%;
-    color: white;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    padding-top: 10%;
-    margin-left: 15%;
-=======
-=======
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
-=======
 #contact_heading {
     position: relative;
     color: white;
     font-family: "Helvetica Neue", sans-serif;/* what font?? */
     font-size:200%;
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
     padding-top: 5%;
     margin-left: 15%;
 
@@ -288,9 +245,6 @@ src: url(HelveticaNeue.dfont);
     background: #ffffff;
     /*background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 }
 
 #gallery_heading {
@@ -302,24 +256,6 @@ src: url(HelveticaNeue.dfont);
     margin-left: 15%;
 }
 
-=======
-=======
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
-}
-
-#gallery_heading {
-    position: relative;
-    color: black;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
-    padding-top: 10%;
-    margin-left: 15%;
-}
-
-<<<<<<< HEAD
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
-=======
->>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 #gallery {
     padding-top: 5%;
     margin-left: 13%;
@@ -333,15 +269,17 @@ src: url(HelveticaNeue.dfont);
   float:left;
   text-align:center;
   margin-left: 2%;
+  text-align:center;
   }
   
-#gallery .gallery_item gallery_item
+#gallery .gallery_item
   {
   display:inline;
   margin:10px;
+  text-align:center;
   }
 
-#gallery .desc
+#gallery .gallery_item .desc
   {
   text-align:center;
   font-weight:normal;
@@ -349,6 +287,4 @@ src: url(HelveticaNeue.dfont);
   width:120px;
   margin:2px;
   color: black;
-  margin-left: 15%;
-  margin-bottom: 15%;
   }
