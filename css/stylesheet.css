@@ -206,3 +206,30 @@ html, body {
     text-transform: uppercase;
     
 }
+
+/* contact section */
+
+#section_contact {
+
+    position: relative;
+    width: 100%;
+    height: 65%;
+    background: #ffffff  url('./images/contact_background.jpg') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
+}
+/*
+@font-face
+{
+font-family: "Helvetica Neue";
+src: url(HelveticaNeue.dfont);
+}*/
+
+#contact_heading {
+    position: relative;
+    color: white;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    top: 10%;
+    left: 15%;
+}
