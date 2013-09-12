@@ -1,0 +1,208 @@
+/* 
+    Document   : Stylesheet
+    Created on : 11.9.2013, 22:15:58
+    Author     : PC
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+* {
+
+    margin: 0px 0px;
+    /*padding: 0 0;*/
+}
+
+html, body {
+    background-color: appworkspace;
+    height: 100%;
+    width: 100%;
+}
+
+.page_section {
+    width: 100%;
+}
+
+#section_welcome {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #ffffff  url('./images/welcome_background.jpg') no-repeat left top;
+    /*background-size: 100% Auto;*/
+    background-size:cover;
+}
+
+#welcome_logo_kosice {
+
+    /*absolute position ? */
+    position: absolute;
+    height: 85px;
+    width: 88px;
+    top: 0px;
+    right: 0px;
+    background: url('./images/welcome_kosice_logo.png') no-repeat;
+}
+
+#welcome_title {
+
+    position: relative;
+    height: 258px;
+    width: 427px;
+    background: url('./images/tokaj_title_logo.png') no-repeat center;
+    /*background-size: 100% 100%;*/
+}
+
+#welcome_middle_wrapper{
+
+    position: relative;
+    height: 600px;
+    width:  427px;
+    margin: 0px auto;
+    /*border: red solid 1px;*/
+}
+
+#welcome_menu {
+
+    position: relative;
+    height: 342px;
+    width: 427px;
+    text-align: center;
+}
+
+#welcome_menu .welcome_menu_item_wrapper {
+    position: relative;
+    display: inline-block;    
+    width: 90px;
+    height: 90px;
+    margin: 2px auto;
+
+    border-radius: 50%;
+    border: white solid 3px;
+}
+
+#welcome_menu .welcome_menu_item_wrapper .menu_item_text {
+
+    position: relative;
+    color: white;
+    text-transform: uppercase;
+    /*border: green dotted 2px;*/
+    top: 50%;
+    margin-top: -1em;
+}
+
+#sticky_menu {
+
+    position: relative;
+
+    width: 100%;
+    height: 80px;
+
+
+    background-color: rgba(143, 72, 6, 0.65);
+}
+
+#sticky_menu_wrapper_left {
+
+    position:absolute;
+
+    height: 100%;
+
+    left:0px;    
+
+    margin: 8px auto;
+}
+
+#sticky_menu_wrapper_right {
+
+    position:absolute;
+
+    height: 100%;
+
+    right:0px;
+
+    margin: 8px auto;
+}
+
+
+#sticky_menu_wrapper_centered {
+
+    position:absolute;
+
+    left:50%;
+    margin-left:-310px;
+    margin-top: 8px;
+
+    height: 100%;
+    width: 620px;
+}
+
+#sticky_menu .sticky_menu_item {
+    
+    position:relative;
+    
+    float: left;
+    width: 60px;
+    height: 60px;
+    
+    margin: auto 5px;
+
+    border-radius: 50%;
+    border: white solid 3px;
+    
+    text-align: center;
+}
+
+#sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
+
+    position:absolute;
+
+    top: 5px;
+    left: 6px;    
+    width: 50px;
+    height: 50px;
+    
+    font-size: 120%;
+    
+    border-radius: 50%;
+    border-left: white solid 3px;
+}
+
+#sticky_menu .sticky_menu_item .sticky_menu_item_right_cropped {
+
+    position:absolute;
+
+    top: 5px;
+    right: 6px;
+    width: 50px;
+    height: 50px;
+    
+    font-size: 120%;
+    
+    border-radius: 50%;
+    border-right: white solid 3px;
+}
+
+/* logo in the center of sticky menu */
+#sticky_menu_logo_item {
+
+    float: left;
+    width: 150px;
+    height: 60px;
+    margin-top: -10px;
+}
+
+#sticky_menu .sticky_menu_item_text {
+
+    position: relative;
+    top: 50%;
+    margin-top: -1em;
+    font-size: 60%;
+    
+    color: white;
+    text-transform: uppercase;
+    
+}
