@@ -206,6 +206,7 @@ html, body {
     text-transform: uppercase;
     
 }
+<<<<<<< HEAD
 /* project info section */
 #section_project_info {
 
@@ -216,6 +217,8 @@ html, body {
     background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 }
+=======
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 
 /* contact section */
 
@@ -235,6 +238,7 @@ font-family: "Helvetica Neue";
 src: url(HelveticaNeue.dfont);
 }*/
 
+<<<<<<< HEAD
 /*** common class for each title of a section ***/
 
 /* black version */
@@ -262,6 +266,13 @@ src: url(HelveticaNeue.dfont);
 =======
 =======
 >>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
+=======
+#contact_heading {
+    position: relative;
+    color: white;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
     padding-top: 5%;
     margin-left: 15%;
 
@@ -278,6 +289,7 @@ src: url(HelveticaNeue.dfont);
     /*background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 }
 
@@ -291,6 +303,8 @@ src: url(HelveticaNeue.dfont);
 }
 
 =======
+=======
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 }
 
 #gallery_heading {
@@ -302,6 +316,9 @@ src: url(HelveticaNeue.dfont);
     margin-left: 15%;
 }
 
+<<<<<<< HEAD
+>>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
+=======
 >>>>>>> cfcb46d31a6c408278177c5f0cb14c02090e445f
 #gallery {
     padding-top: 5%;
