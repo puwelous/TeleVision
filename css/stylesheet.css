@@ -25,8 +25,8 @@ html, body {
 }
 
 .page_section_wrapper {
-    padding-top: 10%;
-    padding-left: 15%;
+    padding-top: 6%;
+    padding-left: 14%;
 }
 
 #section_welcome {
@@ -238,7 +238,7 @@ html, body {
     color: white;
     font-family: "Helvetica Neue", sans-serif;/* what font?? */
     font-size:200%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 
 }
 /*black*/
@@ -247,7 +247,7 @@ html, body {
     color: black;
     font-family: "Helvetica Neue", sans-serif;/* what font?? */
     font-size:200%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
 }
 
 /*** galery section ***/
@@ -302,4 +302,32 @@ html, body {
     width:120px;
     margin:2px;
     color: black;
+}
+
+
+#left_part_wrapper {
+    position: relative;
+    width: 318px;
+}
+
+#middle_part {
+    
+    position: relative;
+    
+    width: 316px;
+    
+    margin: 10px auto;
+}
+
+#bottom_part {
+    
+    position: relative;
+    
+    width: 316px;
+    
+    margin: 10px auto;
+}
+
+.common_text{
+    font-size: 95%;
 }
