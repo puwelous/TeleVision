@@ -25,8 +25,8 @@ html, body {
 }
 
 .page_section_wrapper {
-    padding-top: 6%;
-    padding-left: 14%;
+    padding-top: 5%;
+    padding-left: 12%;
 }
 
 #section_welcome {
@@ -304,10 +304,47 @@ html, body {
     color: black;
 }
 
-
-#left_part_wrapper {
+#project_info_container {
+    
     position: relative;
-    width: 318px;
+    
+    width: 1034px;
+    height: 490px;
+    
+    border: solid red 1px;
+}
+#left_part_wrapper {
+    position: absolute;
+    float: left;
+    
+    width: 32%;
+    height: auto;
+
+    top: 0px;
+    left: 0px;
+    
+    padding: 4px;
+    
+    border: solid purple 1px;
+}
+
+#right_part_wrapper {
+    position: absolute;
+    float: right;
+    
+    width: 65%;
+    height: auto;
+    
+    top: 0px;
+    right: 0px;
+
+    padding: 4px;
+    
+    border: solid orange 1px;
+}
+
+#top_part {
+    /*text-align: center;*/
 }
 
 #middle_part {
@@ -330,4 +367,26 @@ html, body {
 
 .common_text{
     font-size: 95%;
+}
+
+.common_text_bold {
+    font-size: 75%;
+    font-weight: bold;
+}
+
+#right_part_wrapper .poject_info_right_part_text_wrapper{
+    width: 100%;
+}
+
+#right_part_wrapper .poject_info_right_part_text_wrapper .left_column{
+    float: left;
+    width: 33%;
+    /*min-width: 30%;*/
+    /*border: solid green 1px;*/
+}
+
+#right_part_wrapper .poject_info_right_part_text_wrapper .right_column{
+    float:left;
+    width: 66%;
+    /*border: solid blue 1px;*/
 }
