@@ -29,6 +29,7 @@ html, body {
     padding-left: 12%;
 }
 
+/**************** welcome section ****************/
 #section_welcome {
 
     position: relative;
@@ -96,7 +97,9 @@ html, body {
     top: 50%;
     margin-top: -1em;
 }
+/**************** end of welcome section ****************/
 
+/**************** sticky menu of project info section ****************/
 #sticky_menu {
 
     position: relative;
@@ -104,7 +107,7 @@ html, body {
     width: 100%;
     height: 80px;
 
-
+    /* used instead of classic rgb() and opacity */
     background-color: rgba(143, 72, 6, 0.65);
 }
 
@@ -208,9 +211,9 @@ html, body {
     color: white;
     text-transform: uppercase;
 
-}
+}/* end of sticky menu*/
 
-/*project info section*/
+/**************** project info section ****************/
 #section_project_info {
     position: relative;
     width: 100%;
@@ -220,38 +223,75 @@ html, body {
     background-size:cover;
 }
 
-/* contact section */
-#section_contact {
+#project_info_container {
 
     position: relative;
+
+    width: 1034px;
+    height: 490px;
+
+    border: solid red 1px;
+}
+#left_part_wrapper {
+    position: absolute;
+    float: left;
+
+    width: 32%;
+    height: auto;
+
+    top: 0px;
+    left: 0px;
+
+    padding-top:    4px;
+    padding-bottom: 0px;
+    padding-left:   4px;
+    padding-right:   4px;
+
+    border: solid purple 1px;
+}
+
+#right_part_wrapper {
+    position: absolute;
+    float: right;
+
+    width: 65%;
+    height: auto;
+
+    top: 0px;
+    right: 0px;
+
+    padding: 4px;
+
+    border: solid orange 1px;
+}
+
+.left_part_block_item {
+    position: relative;
+
+    width: 316px;
+
+    margin-bottom: 20px;
+}
+
+#right_part_wrapper .poject_info_right_part_text_wrapper{
     width: 100%;
-    height: 65%;
-    background: #ffffff  url('./images/contact_background.jpg') no-repeat left top;
-    background-position: 50% 50%; /* for moving the background up */
-    background-size:cover;
 }
 
-/*** section heading titles ***/
-/*white*/
-.section_title_wh {
-    position: relative;
-    color: white;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
-    margin-bottom: 2%;
-
-}
-/*black*/
-.section_title_bl {
-    position: relative;
-    color: black;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
-    margin-bottom: 2%;
+#right_part_wrapper .poject_info_right_part_text_wrapper .left_column{
+    float: left;
+    width: 33%;
+    /*min-width: 30%;*/
+    /*border: solid green 1px;*/
 }
 
-/*** galery section ***/
-/* TODO: update style by Mitken */
+#right_part_wrapper .poject_info_right_part_text_wrapper .right_column{
+    float:left;
+    width: 66%;
+    /*border: solid blue 1px;*/
+}
+/**************** end of project info section ****************/
+
+/**************** gallery section ****************/
 #section_gallery {
 
     position: relative;
@@ -303,68 +343,94 @@ html, body {
     margin:2px;
     color: black;
 }
+/**************** end of gallery section ****************/
 
-#project_info_container {
-    
+/**************** aims and realization section ****************/
+#section_project_aims_and_realization {
     position: relative;
-    
-    width: 1034px;
-    height: 490px;
-    
-    border: solid red 1px;
+    width: 100%;
+    height: 200%;
+    background: #ffffff  url('./images/aims_realization_background.png') no-repeat left top;
+    background-position: 50% 50%;
+    background-size:cover;
 }
-#left_part_wrapper {
-    position: absolute;
+
+#impressive_shoots_wrapper img {
+    position: relative;
+    width: 315px;
+    height: 178px;
+    margin-right: 16px;
     float: left;
-    
-    width: 32%;
-    height: auto;
-
-    top: 0px;
-    left: 0px;
-    
-    padding: 4px;
-    
-    border: solid purple 1px;
 }
 
-#right_part_wrapper {
-    position: absolute;
-    float: right;
-    
-    width: 65%;
-    height: auto;
-    
-    top: 0px;
-    right: 0px;
-
-    padding: 4px;
-    
-    border: solid orange 1px;
-}
-
-#top_part {
-    /*text-align: center;*/
-}
-
-#middle_part {
-    
+#section_project_aims_and_realization .aims_and_realization_text_block_wrapper {
     position: relative;
-    
-    width: 316px;
-    
-    margin: 10px auto;
+    height: 300px;
+    margin-top: 15px;
+    margin-right: 16px;
 }
 
-#bottom_part {
-    
+#section_project_aims_and_realization .aims_and_realization_text_block_wrapper .block_item {
+
     position: relative;
-    
-    width: 316px;
-    
-    margin: 10px auto;
+
+    float: left;
+
+    width: 315px;
+    margin-right: 16px;
 }
 
+#section_project_aims_and_realization .block_item .block_item_title {
+
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+/**************** end of aims and realization section ****************/
+
+/**************** contact section ****************/
+#section_contact {
+
+    position: relative;
+    width: 100%;
+    height: 65%;
+    background: #ffffff  url('./images/contact_background.jpg') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
+}
+/**************** end of contact section ****************/
+
+/* hack */
+.clear_both {
+    clear: both;
+}
+
+/*** heading titles ***/
+/*white*/
+.section_title_wh {
+    position: relative;
+    color: white;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    margin-bottom: 2%;
+    clear: both;
+
+}
+/*black*/
+.section_title_bl {
+    position: relative;
+    color: black;
+    font-family: "Helvetica Neue", sans-serif;/* what font?? */
+    font-size:200%;
+    margin-bottom: 2%;
+    clear: both;
+}
+
+/* hack - selecting the second .section_title_bl heading */ 
+.section_title_bl:nth-of-type(2n) {
+    margin-top: 40%;
+}
+
+/* common texts */
 .common_text{
     font-size: 95%;
 }
@@ -373,20 +439,4 @@ html, body {
     font-size: 75%;
     font-weight: bold;
 }
-
-#right_part_wrapper .poject_info_right_part_text_wrapper{
-    width: 100%;
-}
-
-#right_part_wrapper .poject_info_right_part_text_wrapper .left_column{
-    float: left;
-    width: 33%;
-    /*min-width: 30%;*/
-    /*border: solid green 1px;*/
-}
-
-#right_part_wrapper .poject_info_right_part_text_wrapper .right_column{
-    float:left;
-    width: 66%;
-    /*border: solid blue 1px;*/
-}
+/*** end of heading titles ***/
