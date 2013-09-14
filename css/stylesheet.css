@@ -293,15 +293,28 @@ html, body {
 
 
 /**************** partners section ****************/
-ul.dash {
+ul.dash_exp_pref {
     list-style:none;
-    margin-left:0;
+    margin-left:0px;
+    padding-left: 0px;
 }
 
-ul.dash li:before {
+ul.dash_exp_pref li:before {
     display:inline-block;
     content:"-";
     width:3px;
+}
+
+ul.dash_circle {
+    list-style-type: disc;
+/*    margin-left:0px; */
+    padding-left: 16px;
+}
+
+#section_our_partners ul.dash_exp_pref {
+    list-style:none;
+    margin-right: 12px;
+    /*padding-left: 0px;*/
 }
 
 #section_our_partners {
@@ -370,7 +383,7 @@ ul.dash li:before {
 }
 
 .partners_logo {
-    margin-left: 20px;
+    margin-left: 0px;
 }
 
 .partners_logo_desc {
@@ -449,6 +462,7 @@ ul.dash li:before {
     width: 315px;
     height: 178px;
     margin-right: 16px;
+    margin-bottom: 12px;
     float: left;
 }
 
