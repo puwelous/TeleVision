@@ -302,18 +302,8 @@ html, body {
     background-size:cover;
 }
 
-#gallery_heading {
-    position: relative;
-    color: black;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
-    /*    padding-top: 10%;
-        margin-left: 15%;*/
-}
-
 #gallery {
-    /*    padding-top: 5%;
-        margin-left: 13%;*/
+    text-align: center;
 }
 
 #gallery .gallery_item
@@ -324,7 +314,10 @@ html, body {
     float:left;
     text-align:center;
     margin-left: 2%;
-    text-align:center;
+}
+
+#gallery .gallery_item .gallery_item_wrapper {
+    text-align:center;   
 }
 
 #gallery .gallery_item
@@ -339,8 +332,6 @@ html, body {
     text-align:center;
     font-weight:normal;
     font-size: 75%;
-    width:120px;
-    margin:2px;
     color: black;
 }
 /**************** end of gallery section ****************/
