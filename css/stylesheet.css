@@ -29,8 +29,10 @@ html, body {
 }
 
 .page_section_wrapper {
-    padding-top: 6.5%;
-    padding-left: 12%;
+    /*    padding-top: 7%;*/
+    height: 100%;
+    padding-top: 100px;
+    padding-left: 12%;   
 }
 
 /**************** welcome section ****************/
@@ -81,31 +83,33 @@ html, body {
     width: 427px;
     text-align: center;
 }
-#first_row{
 
-    height: 120px;
+.row_class {
+    /*height: 96px;*/
+    /*margin: 10px auto;*/
     vertical-align: middle;
-}
-#welcome_menu .welcome_menu_item_wrapper {
-    position: relative;
 
-    display: inline-block;    
+}
+
+#welcome_menu .welcome_menu_item_wrapper {
+    
+    position: relative;
+    display: inline-block;
+
     width: 90px;
     height: 90px;
-    /*margin: 2px 5px;*/
+    line-height: 90px;
+    text-align: center;
 
+    margin-left: auto;
+    margin-right: auto;
+    
     border-radius: 50%;
     border: white solid 3px;
 }
 
-#welcome_menu .welcome_menu_item_wrapper .menu_item_text {
-
-    position: relative;
-    color: white;
-    text-transform: uppercase;
-    /*border: green dotted 2px;*/
-    top: 50%;
-    margin-top: -1em;
+#welcome_menu .welcome_menu_item_wrapper:hover {
+    cursor: pointer;
 }
 /**************** end of welcome section ****************/
 
@@ -116,7 +120,7 @@ html, body {
 
     width: 100%;
     height: 80px;
-    
+
     /*visibility: visible;*/
 
     /* used instead of classic rgb() and opacity */
@@ -186,9 +190,33 @@ html, body {
     text-align: center;
 }
 
-#sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
+#sticky_menu .sticky_menu_item:hover {
+    cursor: pointer;
+}
 
-    position:absolute;
+#sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
+    display: table-cell;
+    
+    height: 50px;
+    width:50px;
+    
+    vertical-align: middle;
+    text-align: center;
+    
+    line-height: normal;    
+
+    font-family: "helvetica_cond_bold";
+    /* 25 px */
+    font-size: 1.3em;
+/*    position:absolute;*/
+/*    margin-left: 0.65em;
+    margin-top: 0.65em;*/
+    
+    color: white;
+    text-transform: uppercase;
+    
+    
+/*    position:absolute;
 
     top: 5px;
     left: 6px;    
@@ -196,9 +224,11 @@ html, body {
     height: 50px;
 
     font-size: 120%;
-
+*/
     border-radius: 50%;
     border-left: white solid 3px;
+
+    overflow: hidden;
 }
 
 #sticky_menu .sticky_menu_item .sticky_menu_item_right_cropped {
@@ -214,6 +244,8 @@ html, body {
 
     border-radius: 50%;
     border-right: white solid 3px;
+
+    overflow: hidden;
 }
 
 /* logo in the center of sticky menu */
@@ -259,7 +291,7 @@ html, body {
 
     padding-top:    4px;
     padding-bottom: 0px;
-/*    padding-left:   4px;*/
+    /*    padding-left:   4px;*/
     padding-right:   2px;
 
     /*border: solid purple 1px;*/
@@ -550,25 +582,45 @@ ul.dash_circle {
 
 /*dynamic menu items text*/
 #section_welcome .menu_item_text {
-    color: white;
-    text-transform: none;
+    
+    display: table-cell;
+    
+    height: 90px;
+    width:90px;
+    
+    vertical-align: middle;
+    text-align: center;
+    
+    line-height: normal;    
 
-    /* v menu a v tej tabulke je helvetica neue condensed bold */
     font-family: "helvetica_cond_bold";
-    font-size: 2.5em; /* 21 px */
+    /* 25 px */
+    font-size: 2.5em;
+    color: white;
+    text-transform: uppercase;
 }
+
 /* sticky menu items text */
 #sticky_menu .sticky_menu_item_text {
 
+    display: table-cell;
+    
+    height: 60px;
+    width:60px;
+    
     position: relative;
-    top: 50%;
-    margin-top: -1em;
+    
+    vertical-align: middle;
+    text-align: center;
+    
+    line-height: normal;
 
+    font-family: "helvetica_cond_bold";
     color: white;
     text-transform: uppercase;
 
-    font-family: "helvetica_cond_bold";
-    font-size: 1.8em; /* 15 px */
+    /* 18 px */
+    font-size: 1.8em; 
 }
 
 #our_partners_ps .partners_logo_desc {
@@ -580,7 +632,7 @@ ul.dash_circle {
     display: table-cell; 
     vertical-align:middle;
     padding: 20px;
-    
+
     font-family: "helvetica_cond_bold";
 }
 
@@ -597,18 +649,18 @@ ul.dash_circle {
 .common_text {
 
     font-family: "helvetica_light";
-    font-size: 2em; /* 20 px */
+    font-size: 2.2em; /* 20 px */
 }
 
 .small {
 
-    font-size: 1.8em; /* 55 px */
+    font-size: 1.9em; /* 55 px */
 }
 
 .table_text_bold {
 
     font-family: helvetica_cond_bold;
-    font-size: 1.8em; /* 55 px */
+    font-size: 1.9em; /* 55 px */
 }
 
 #aims_and_realizations_ps .block_item .block_item_title {
@@ -646,12 +698,12 @@ ul.dash_circle {
 }
 
 .f-nav{ 
-	z-index: 9999; 
-	position: fixed; 
-	left: 0; 
-	top: 0; 
-	width: 100%;
-	background-color: rgba(143, 72, 6, 0.65);
-	}
+    z-index: 9999; 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    width: 100%;
+    background-color: rgba(143, 72, 6, 0.65);
+}
 
 
