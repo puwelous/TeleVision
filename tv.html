@@ -19,7 +19,7 @@
                     if ( typeof selected_element_id != 'undefined' ){
 					
                         // sufix check
-                        if( selected_element_id.endsWith("wmi") || selected_element_id.endsWith("smi") || selected_element_id.endsWith("vmi")){
+                        if( selected_element_id.endsWith("wmi") || selected_element_id.endsWith("vmi") || selected_element_id.endsWith("smi") || selected_element_id.endsWith("zmi")){
                             
                             var go_to_section;
                             
@@ -35,17 +35,29 @@
                     }
                 });
 				
-				var nav = $('#sticky_menu');
-				var sticky_menu_actual_offset = nav.offset().top;
+                var nav = $('#sticky_menu');
+                var nav_hidden = $('#sticky_menu_hidden');
+                
+                var sticky_menu_actual_offset = nav.offset().top;
 				
-				$(window).scroll(function () {
+                $(window).scroll(function () {
 
-					if ($(this).scrollTop() > sticky_menu_actual_offset) {
-						nav.addClass("f-nav");
-					} else {
-						nav.removeClass("f-nav");
-					}
-				});
+                    if ($(this).scrollTop() > sticky_menu_actual_offset ) {
+                        
+                        // change style of a sticky menu
+                        nav.addClass("f-nav");
+                        
+                        // add invisible object
+                        nav_hidden.css( "display", "block" );
+                    } else {
+                        
+                        // set the style back 
+                        nav.removeClass("f-nav");
+                        
+                        // remove the object
+                        nav_hidden.css( "display", "none" );
+                    }
+                });
                 
                 
                 String.prototype.endsWith = function(str) {
@@ -116,7 +128,7 @@
                     <div id="aims_and_realizations_smi" class="sticky_menu_item">
                         <div class="sticky_menu_item_text">Ciele <br /> projektu</div>
                     </div>
-                    <div id="aims_and_realizations_smi" class="sticky_menu_item">
+                    <div id="aims_and_realizations_zmi" class="sticky_menu_item">
                         <div class="sticky_menu_item_text">Aktivity <br /> projektu</div>
                     </div>
                     <div id="sticky_menu_logo_item">
@@ -141,6 +153,7 @@
                     </div>
                 </div>
             </div>
+            <div id="sticky_menu_hidden" class="sticky_menu_hidden_class"></div>
             <!--end of menu-->
 
             <!-- content -->
