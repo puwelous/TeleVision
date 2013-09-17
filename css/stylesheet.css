@@ -1,9 +1,9 @@
 /* 
     Document   : Stylesheet
     Created on : 11.9.2013, 22:15:58
-    Author     : PC
+    Author     : Pali
     Description:
-        Purpose of the stylesheet follows.
+        One common stylesheet file per a page.
 */
 
 root { 
@@ -18,6 +18,10 @@ html, body {
     background-color: appworkspace;
     height: 100%;
     width: 100%;
+
+    font-size: 62.5%;
+
+    /*font-family: "HelveticaNeue", sans-serif;*/
 }
 
 .page_section {
@@ -35,7 +39,8 @@ html, body {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #ffffff  url('./images/welcome_background.jpg') no-repeat left top;
+    /*changed from JPG to PNG*/
+    background: #ffffff  url('./images/welcome_background.png') no-repeat left top;
     /*background-size: 100% Auto;*/
     background-size:cover;
 }
@@ -76,13 +81,18 @@ html, body {
     width: 427px;
     text-align: center;
 }
+#first_row{
 
+    height: 120px;
+    vertical-align: middle;
+}
 #welcome_menu .welcome_menu_item_wrapper {
     position: relative;
+
     display: inline-block;    
     width: 90px;
     height: 90px;
-    margin: 2px auto;
+    /*margin: 2px 5px;*/
 
     border-radius: 50%;
     border: white solid 3px;
@@ -100,7 +110,7 @@ html, body {
 /**************** end of welcome section ****************/
 
 /**************** sticky menu of project info section ****************/
-#sticky_menu {
+.sticky_menu_class {
 
     position: relative;
 
@@ -201,24 +211,15 @@ html, body {
     margin-top: -10px;
 }
 
-#sticky_menu .sticky_menu_item_text {
-
-    position: relative;
-    top: 50%;
-    margin-top: -1em;
-    font-size: 60%;
-
-    color: white;
-    text-transform: uppercase;
-
-}/* end of sticky menu*/
+/* end of sticky menu*/
 
 /**************** project info section ****************/
-#section_project_info {
+#abt_prjct_ps {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #ffffff  url('./images/project_info_background.png') no-repeat left top;
+    /*changed from PNG to JPG*/
+    background: #ffffff  url('./images/project_info_background.jpg') no-repeat left top;
     background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 }
@@ -227,10 +228,10 @@ html, body {
 
     position: relative;
 
-    width: 1034px;
+    width: 1028px;
     height: 490px;
 
-    border: solid red 1px;
+    /*border: solid red 1px;*/
 }
 #left_part_wrapper {
     position: absolute;
@@ -244,10 +245,10 @@ html, body {
 
     padding-top:    4px;
     padding-bottom: 0px;
-    padding-left:   4px;
-    padding-right:   4px;
+/*    padding-left:   4px;*/
+    padding-right:   2px;
 
-    border: solid purple 1px;
+    /*border: solid purple 1px;*/
 }
 
 #right_part_wrapper {
@@ -262,35 +263,79 @@ html, body {
 
     padding: 4px;
 
-    border: solid orange 1px;
+    /*border: solid orange 1px;*/
 }
 
 .left_part_block_item {
     position: relative;
 
-    width: 316px;
+    width: 314px;
 
     margin-bottom: 20px;
 }
 
-#right_part_wrapper .poject_info_right_part_text_wrapper{
+#right_part_wrapper .project_info_right_part_text_wrapper{
     width: 100%;
 }
 
-#right_part_wrapper .poject_info_right_part_text_wrapper .left_column{
-    float: left;
-    width: 33%;
-    /*min-width: 30%;*/
-    /*border: solid green 1px;*/
+#right_part_wrapper .project_info_right_part_row{
+    width: 100%;
+    clear: both;
 }
 
-#right_part_wrapper .poject_info_right_part_text_wrapper .right_column{
+#right_part_wrapper .project_info_right_part_text_wrapper .left_column{
+    float: left;
+    width: 33%;
+}
+
+#right_part_wrapper .project_info_right_part_text_wrapper .right_column{
     float:left;
     width: 66%;
-    /*border: solid blue 1px;*/
+    clear: right;
+}
+
+#right_part_wrapper img {
+
+    margin-top: 30px;
 }
 /**************** end of project info section ****************/
 
+/**************** aims and realization section ****************/
+#aims_and_realizations_ps {
+    position: relative;
+    width: 100%;
+    height: 200%;
+    background: #ffffff  url('./images/aims_realization_background.png') no-repeat left top;
+    background-position: 50% 50%;
+    background-size:cover;
+}
+
+#impressive_shoots_wrapper img {
+    position: relative;
+    width: 315px;
+    height: 178px;
+    margin-right: 16px;
+    margin-bottom: 12px;
+    float: left;
+}
+
+#aims_and_realizations_ps .aims_and_realization_text_block_wrapper {
+    position: relative;
+    height: 300px;
+    margin-top: 15px;
+    margin-right: 16px;
+}
+
+#aims_and_realizations_ps .aims_and_realization_text_block_wrapper .block_item {
+
+    position: relative;
+
+    float: left;
+
+    width: 315px;
+    margin-right: 16px;
+}
+/**************** end of aims and realization section ****************/
 
 /**************** partners section ****************/
 ul.dash_exp_pref {
@@ -307,21 +352,22 @@ ul.dash_exp_pref li:before {
 
 ul.dash_circle {
     list-style-type: disc;
-/*    margin-left:0px; */
+    /*    margin-left:0px; */
     padding-left: 16px;
 }
 
-#section_our_partners ul.dash_exp_pref {
+#our_partners_ps ul.dash_exp_pref {
     list-style:none;
     margin-right: 12px;
     /*padding-left: 0px;*/
 }
 
-#section_our_partners {
+#our_partners_ps {
     position: relative;
     width: 100%;
     height: 200%;
-    background: #ffffff  url('./images/partners_background.png') no-repeat left top;
+    /*changed from PNG to JPG*/
+    background: #ffffff  url('./images/partners_background.jpg') no-repeat left top;
     background-size:cover;
 }
 
@@ -330,41 +376,41 @@ ul.dash_circle {
     position: relative;
     margin: 10px auto;
     /*width: 100%;*/
-        
+
 }
 
 
 .partners_ke {
-	width: 316px;
-	height: 316px;
-	border-radius: 158px;
-	-webkit-border-radius: 158px;
-	-moz-border-radius: 158px;
-	background: url('./images/dom_alzbeta.jpg') no-repeat;
-	background-size:316px 316px;
-	margin: 10px auto;
+    width: 316px;
+    height: 316px;
+    border-radius: 158px;
+    -webkit-border-radius: 158px;
+    -moz-border-radius: 158px;
+    background: url('./images/dom_alzbeta.jpg') no-repeat;
+    background-size:316px 316px;
+    margin: 10px auto;
 }
 
 .partners_mi {
-	width: 316px;
-	height: 316px;
-	border-radius: 158px;
-	-webkit-border-radius: 158px;
-	-moz-border-radius: 158px;
-	background: url('./images/miskolc.jpg') no-repeat;
-	background-size:316px 316px;
-	margin: 10px auto;
+    width: 316px;
+    height: 316px;
+    border-radius: 158px;
+    -webkit-border-radius: 158px;
+    -moz-border-radius: 158px;
+    background: url('./images/miskolc.jpg') no-repeat;
+    background-size:316px 316px;
+    margin: 10px auto;
 }
 
 .partners_ab {
-	width: 316px;
-	height: 316px;
-	border-radius: 158px;
-	-webkit-border-radius: 158px;
-	-moz-border-radius: 158px;
-	background: url('./images/adujszanto.JPG') no-repeat;
-	background-size:316px 316px;
-	margin: 10px auto;
+    width: 316px;
+    height: 316px;
+    border-radius: 158px;
+    -webkit-border-radius: 158px;
+    -moz-border-radius: 158px;
+    background: url('./images/adujszanto.JPG') no-repeat;
+    background-size:316px 316px;
+    margin: 10px auto;
 }
 
 .partners_part {
@@ -386,24 +432,13 @@ ul.dash_circle {
     margin-left: 0px;
 }
 
-.partners_logo_desc {
-    position: relative;
-    text-align: left;
-    font-size: 100%;
-    font-weight: 300%;
-    text-transform: uppercase;
-    display: table-cell; 
-    vertical-align:middle;
-    padding: 20px; /* neznau jem jak posunuti insak do serediny vecej */
-}
-
 .partners_text_logo {
     clear: left;
 }
 /**************** end of partners section ****************/
 
 /**************** gallery section ****************/
-#section_gallery {
+#gallery_ps {
 
     position: relative;
     width: 100%;
@@ -415,6 +450,7 @@ ul.dash_circle {
 
 #gallery {
     text-align: center;
+    /*border: purple 3px solid;*/
 }
 
 #gallery .gallery_item
@@ -425,73 +461,28 @@ ul.dash_circle {
     float:left;
     text-align:center;
     margin-left: 2%;
-}
 
-#gallery .gallery_item .gallery_item_wrapper {
-    text-align:center;   
+    /*border: solid red;*/
 }
 
 #gallery .gallery_item
 {
     display:inline;
-    margin:10px;
+    margin-right: 10px;
+    margin-left: 10px;
     text-align:center;
 }
 
-#gallery .gallery_item .desc
+#gallery .gallery_item img
 {
-    text-align:center;
-    font-weight:normal;
-    font-size: 75%;
-    color: black;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    height: 150px;
 }
 /**************** end of gallery section ****************/
 
-/**************** aims and realization section ****************/
-#section_project_aims_and_realization {
-    position: relative;
-    width: 100%;
-    height: 200%;
-    background: #ffffff  url('./images/aims_realization_background.png') no-repeat left top;
-    background-position: 50% 50%;
-    background-size:cover;
-}
-
-#impressive_shoots_wrapper img {
-    position: relative;
-    width: 315px;
-    height: 178px;
-    margin-right: 16px;
-    margin-bottom: 12px;
-    float: left;
-}
-
-#section_project_aims_and_realization .aims_and_realization_text_block_wrapper {
-    position: relative;
-    height: 300px;
-    margin-top: 15px;
-    margin-right: 16px;
-}
-
-#section_project_aims_and_realization .aims_and_realization_text_block_wrapper .block_item {
-
-    position: relative;
-
-    float: left;
-
-    width: 315px;
-    margin-right: 16px;
-}
-
-#section_project_aims_and_realization .block_item .block_item_title {
-
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-/**************** end of aims and realization section ****************/
-
 /**************** contact section ****************/
-#section_contact {
+#contact_ps {
 
     position: relative;
     width: 100%;
@@ -502,30 +493,40 @@ ul.dash_circle {
 }
 /**************** end of contact section ****************/
 
-/* hack */
+/* hacks */
 .clear_both {
     clear: both;
 }
 
-/*** heading titles ***/
+.mybr {
+    position: relative;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+/*** *** *** text issues *** *** ***/
 /*white*/
 .section_title_wh {
     position: relative;
     color: white;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
+
     margin-bottom: 2%;
     clear: both;
+
+    font-family: "helvetica_cond_thin";
+    font-size: 5.5em; /* 55 px */
 
 }
 /*black*/
 .section_title_bl {
     position: relative;
     color: black;
-    font-family: "Helvetica Neue", sans-serif;/* what font?? */
-    font-size:200%;
+
     margin-bottom: 2%;
     clear: both;
+
+    font-family: "helvetica_cond_thin";
+    font-size: 5.5em; /* 55 px */
 }
 
 /* hack - selecting the second .section_title_bl heading */ 
@@ -533,13 +534,110 @@ ul.dash_circle {
     margin-top: 40%;
 }
 
-/* common texts */
-.common_text{
-    font-size: 95%;
+/*dynamic menu items text*/
+#section_welcome .menu_item_text {
+    color: white;
+    text-transform: none;
+
+    /* v menu a v tej tabulke je helvetica neue condensed bold */
+    font-family: "helvetica_cond_bold";
+    font-size: 2.5em; /* 21 px */
+}
+/* sticky menu items text */
+#sticky_menu .sticky_menu_item_text {
+
+    position: relative;
+    top: 50%;
+    margin-top: -1em;
+
+    color: white;
+    text-transform: uppercase;
+
+    font-family: "helvetica_cond_bold";
+    font-size: 1.8em; /* 15 px */
 }
 
-.common_text_bold {
-    font-size: 75%;
-    font-weight: bold;
+#our_partners_ps .partners_logo_desc {
+    position: relative;
+    text-align: left;
+    font-size: 3em;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: table-cell; 
+    vertical-align:middle;
+    padding: 20px;
+    
+    font-family: "helvetica_cond_bold";
+}
+
+#gallery .gallery_item .desc
+{
+    text-align:center;
+    font-weight:normal;
+    font-size: 2em;
+    color: black;
+    /* TODO what font? */
+}
+
+/* common texts */
+.common_text {
+
+    font-family: "helvetica_light";
+    font-size: 2em; /* 20 px */
+}
+
+.small {
+
+    font-size: 1.8em; /* 55 px */
+}
+
+.table_text_bold {
+
+    font-family: helvetica_cond_bold;
+    font-size: 1.8em; /* 55 px */
+}
+
+#aims_and_realizations_ps .block_item .block_item_title {
+
+    font-family: "helvetica_cond_thin";
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 /*** end of heading titles ***/
+
+/*a text je light*/
+@font-face {
+    font-family: "helvetica_light";
+    src: url("helvetica_light.eot");
+    src: local("☺"),
+        url("helvetica_light.ttf") format("truetype"),
+        url("helvetica_light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "helvetica_cond_thin";
+    src: url("helvetica_cond_thin.eot");
+    src: local("☺"),
+        url("helvetica_cond_thin.ttf") format("truetype"),
+        url("helvetica_cond_thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "helvetica_cond_bold";
+    src: url("helvetica_cond_bold.eot");
+    src: local("☺"),
+        url("helvetica_cond_bold.ttf") format("truetype"),
+        url("helvetica_cond_bold.otf") format("opentype");
+}
+
+.f-nav{ 
+	z-index: 9999; 
+	position: fixed; 
+	left: 0; 
+	top: 0; 
+	width: 100%;
+	background-color: rgba(143, 72, 6, 0.65);
+	}
+
+
