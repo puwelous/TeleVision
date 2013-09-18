@@ -1,0 +1,7 @@
+jQuery.i18n.en.strings = {
+    "about_project": "About project",
+	"project_aims":"Project aims",
+	"project_activities":"Project activities",
+	"project_partners":"Project partners",
+	"gallery":"Gallery"
+};

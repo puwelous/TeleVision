@@ -8,6 +8,17 @@
 
         <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 
+        <!--https://code.google.com/p/jquery-i18n-properties/-->
+
+        <script type='text/javascript' src='js/jquery.i18n.js'></script>
+
+        <script type='text/javascript' src='./jquery.hu.json'></script>
+        <script type='text/javascript' src='example.hu.json'></script> 
+
+        <script type='text/javascript' src='./jquery.en.json'></script>
+        <script type='text/javascript' src='example.en.json'></script> 
+
+
         <script type="text/javascript">
             $(document).ready(
             function (){                
@@ -60,9 +71,51 @@
                 });
                 
                 
+                var selected_lang = 'hu';
+                
+                $("#i18n_lang_en").click( function( ){
+                    
+                    if( selected_lang === 'en' ) {
+                        //alert('return');
+                        return;
+                    }
+                    
+                    selected_lang = 'en';
+                    
+                    $._.setLocale('en');
+                    
+                    $("#i18n_about_project").html( $._('about_project') );
+                    $("#i18n_project_aims").html( $._('project_aims') );
+                    $("#i18n_project_activities").html( $._('project_activities') );
+                    $("#i18n_project_partners").html( $._('project_partners') );
+                    $("#i18n_gallery").html( $._('gallery') );
+
+                });
+                
+                $("#i18n_lang_hu").click( function( ){
+                    
+                    if( selected_lang === 'hu' ) {
+                        //alert('return');
+                        return;
+                    }                    
+                    
+                    selected_lang = 'hu';
+                    
+                    $._.setLocale('hu');
+                    
+                    $("#i18n_about_project").html( $._('about_project') );
+                    $("#i18n_project_aims").html( $._('project_aims') );
+                    $("#i18n_project_activities").html( $._('project_activities') );
+                    $("#i18n_project_partners").html( $._('project_partners') );
+                    $("#i18n_gallery").html( $._('gallery') );
+                });
+                
                 String.prototype.endsWith = function(str) {
                     return ( this.match(str+"$") == str);
                 };
+                
+
+
             }
         );
         </script>
@@ -80,21 +133,41 @@
                 <div id="welcome_menu">
                     <div id="first_row" class="row_class">
                         <div id="abt_prjct_wmi" class="welcome_menu_item_wrapper">
-                            <div class="menu_item_text">O projekte</div>
+                            <div class="menu_item_text">
+                                <div id="i18n_about_project" class="i18n_text" >
+                                    O projekte
+                                </div>
+                            </div>
                         </div>
                         <div id="aims_and_realizations_wmi" class="welcome_menu_item_wrapper">
-                            <div class="menu_item_text">Ciele projektu</div>
+                            <div class="menu_item_text">
+                                <div id="i18n_project_aims" class="i18n_text" >
+                                    Ciele projektu
+                                </div>
+                            </div>
                         </div>
                         <div id="aims_and_realizations_vmi" class="welcome_menu_item_wrapper">
-                            <div class="menu_item_text">Aktivity projektu</div>
+                            <div class="menu_item_text">
+                                <div id="i18n_project_activities" class="i18n_text" >
+                                    Aktivity projektu
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div id="second_row" class="row_class">
                         <div id="our_partners_wmi" class="welcome_menu_item_wrapper">
-                            <div class="menu_item_text">Partneri</div>
+                            <div class="menu_item_text">
+                                <div id="i18n_project_partners" class="i18n_text" >
+                                    Partneri
+                                </div>
+                            </div>
                         </div>
                         <div id="gallery_wmi" class="welcome_menu_item_wrapper">
-                            <div class="menu_item_text">Galéria</div>
+                            <div class="menu_item_text">
+                                <div id="i18n_gallery" class="i18n_text" >
+                                    Galéria
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div id="third_row" class="row_class">
@@ -116,7 +189,7 @@
                 <div id="sticky_menu_wrapper_left">
                     <div class="sticky_menu_item">
                         <!--<div class="sticky_menu_item_left_cropped">-->
-                            <div class="sticky_menu_item_text">EN</div>
+                        <div id="i18n_lang_en" class="sticky_menu_item_text">EN</div>
                         <!--</div>-->
                     </div>
                 </div>
@@ -148,7 +221,7 @@
                 <div id="sticky_menu_wrapper_right">
                     <div class="sticky_menu_item">
                         <!--<div class="sticky_menu_item_right_cropped">-->
-                            <div class="sticky_menu_item_text">HU</div>
+                        <div id="i18n_lang_hu" class="sticky_menu_item_text">HU</div>
                         <!--</div>-->
                     </div>
                 </div>
