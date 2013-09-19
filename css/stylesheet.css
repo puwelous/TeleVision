@@ -12,6 +12,7 @@ root {
 
 * {
     margin: 0px 0px;
+    border: red solid 1px;
 }
 
 html, body {
@@ -25,14 +26,24 @@ html, body {
 }
 
 .page_section {
-    width: 100%;
+    /*width: 100%;*/
+    border: red solid 2px;
 }
 
 .page_section_wrapper {
     /*    padding-top: 7%;*/
-    height: 100%;
-    padding-top: 100px;
-    padding-left: 12%;   
+    /*height: 100%;*/
+    margin: 100px auto;
+
+    width: 80%;
+
+    /*margin-left: 12%;*/
+    border: black solid 2px;
+}
+
+.page_section_wrapper:nth-child(3) {
+    /*margin-top: 31%;*/
+    margin-top: 20px;
 }
 
 /**************** welcome section ****************/
@@ -42,7 +53,7 @@ html, body {
     width: 100%;
     height: 100%;
     /*changed from JPG to PNG*/
-    background: #ffffff  url('./images/welcome_background.png') no-repeat left top;
+    background: #ffffff  url('./images/welcome_background.png') no-repeat center top;
     /*background-size: 100% Auto;*/
     background-size:cover;
 }
@@ -62,7 +73,7 @@ html, body {
 
     position: relative;
     height: 258px;
-    width: 427px;
+    width: 300px;
     background: url('./images/tokaj_title_logo.png') no-repeat center;
     /*background-size: 100% 100%;*/
 }
@@ -71,7 +82,7 @@ html, body {
 
     position: relative;
     height: 600px;
-    width:  427px;
+    width:  300px;
     margin: 0px auto;
     /*border: red solid 1px;*/
 }
@@ -80,7 +91,7 @@ html, body {
 
     position: relative;
     height: 342px;
-    width: 427px;
+    width: 300px;
     text-align: center;
 }
 
@@ -92,7 +103,7 @@ html, body {
 }
 
 #welcome_menu .welcome_menu_item_wrapper {
-    
+
     position: relative;
     display: inline-block;
 
@@ -103,7 +114,7 @@ html, body {
 
     margin-left: auto;
     margin-right: auto;
-    
+
     border-radius: 50%;
     border: white solid 3px;
 }
@@ -167,11 +178,11 @@ html, body {
     position:absolute;
 
     left:50%;
-    margin-left:-310px;
+    margin-left:-277.5px;
     margin-top: 8px;
 
     height: 100%;
-    width: 620px;
+    width: 555px;
 }
 
 #sticky_menu .sticky_menu_item {
@@ -196,35 +207,35 @@ html, body {
 
 #sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
     display: table-cell;
-    
+
     height: 50px;
     width:50px;
-    
+
     vertical-align: middle;
     text-align: center;
-    
+
     line-height: normal;    
 
     font-family: "helvetica_cond_bold";
     /* 25 px */
     font-size: 1.3em;
-/*    position:absolute;*/
-/*    margin-left: 0.65em;
-    margin-top: 0.65em;*/
-    
+    /*    position:absolute;*/
+    /*    margin-left: 0.65em;
+        margin-top: 0.65em;*/
+
     color: white;
     text-transform: uppercase;
-    
-    
-/*    position:absolute;
 
-    top: 5px;
-    left: 6px;    
-    width: 50px;
-    height: 50px;
 
-    font-size: 120%;
-*/
+    /*    position:absolute;
+    
+        top: 5px;
+        left: 6px;    
+        width: 50px;
+        height: 50px;
+    
+        font-size: 120%;
+    */
     border-radius: 50%;
     border-left: white solid 3px;
 
@@ -252,9 +263,17 @@ html, body {
 #sticky_menu_logo_item {
 
     float: left;
-    width: 150px;
+    width: 94px;
     height: 60px;
-    margin-top: -10px;
+    /*margin-top: -10px;*/
+}
+
+#sticky_menu_logo_item img {
+
+    float: left;
+    /*width: 141px;*/
+    height: 100%;
+    /*margin-top: -10px;*/
 }
 
 /* end of sticky menu*/
@@ -265,9 +284,27 @@ html, body {
     width: 100%;
     height: 100%;
     /*changed from PNG to JPG*/
-    background: #ffffff  url('./images/project_info_background.jpg') no-repeat left top;
+    background: #ffffff  url('./images/project_info_background.jpg') no-repeat center top;
     background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
+}
+
+@media (max-width: 770px)
+{ 
+    #sticky_menu_logo_item{
+        display: none;
+    }
+
+    #sticky_menu_wrapper_centered{
+        width: 470px;
+        margin-left: -235px;
+    }
+
+    .page_section_wrapper {
+
+        width: 90%;
+
+    }
 }
 
 #project_info_container {
@@ -280,14 +317,14 @@ html, body {
     /*border: solid red 1px;*/
 }
 #left_part_wrapper {
-    position: absolute;
+    position: relative;
     float: left;
 
     width: 32%;
     height: auto;
 
-    top: 0px;
-    left: 0px;
+/*    top: 0px;
+    left: 0px;*/
 
     padding-top:    4px;
     padding-bottom: 0px;
@@ -295,6 +332,15 @@ html, body {
     padding-right:   2px;
 
     /*border: solid purple 1px;*/
+}
+
+#left_part_wrapper img {
+
+    /*width: 100%;*/
+    max-width: 100%;
+    height: auto;
+    
+    border: solid purple 2px;
 }
 
 #right_part_wrapper {
@@ -313,9 +359,11 @@ html, body {
 }
 
 .left_part_block_item {
+
     position: relative;
 
     width: 314px;
+    
 
     margin-bottom: 20px;
 }
@@ -351,7 +399,7 @@ html, body {
     position: relative;
     width: 100%;
     height: 200%;
-    background: #ffffff  url('./images/aims_realization_background.png') no-repeat left top;
+    background: #ffffff  url('./images/aims_realization_background.png') no-repeat center top;
     background-position: 50% 50%;
     background-size:cover;
 }
@@ -359,10 +407,11 @@ html, body {
 #impressive_shoots_wrapper img {
     position: relative;
     width: 315px;
-    height: 178px;
+    height: auto;
     margin-right: 16px;
     margin-bottom: 12px;
     float: left;
+    max-width: 100%;
 }
 
 #aims_and_realizations_ps .aims_and_realization_text_block_wrapper {
@@ -413,7 +462,7 @@ ul.dash_circle {
     width: 100%;
     height: 200%;
     /*changed from PNG to JPG*/
-    background: #ffffff  url('./images/partners_background.jpg') no-repeat left top;
+    background: #ffffff  url('./images/partners_background.jpg') no-repeat center top;
     background-size:cover;
 }
 
@@ -532,8 +581,8 @@ ul.dash_circle {
 
     position: relative;
     width: 100%;
-    height: 65%;
-    background: #ffffff  url('./images/contact_background.jpg') no-repeat left top;
+    height: 100%;
+    background: #ffffff  url('./images/contact_background.jpg') no-repeat center top;
     background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 }
@@ -582,15 +631,15 @@ ul.dash_circle {
 
 /*dynamic menu items text*/
 #section_welcome .menu_item_text {
-    
+
     display: table-cell;
-    
+
     height: 90px;
     width:90px;
-    
+
     vertical-align: middle;
     text-align: center;
-    
+
     line-height: normal;    
 
     font-family: "helvetica_cond_bold";
@@ -604,15 +653,15 @@ ul.dash_circle {
 #sticky_menu .sticky_menu_item_text {
 
     display: table-cell;
-    
+
     height: 60px;
     width:60px;
-    
+
     position: relative;
-    
+
     vertical-align: middle;
     text-align: center;
-    
+
     line-height: normal;
 
     font-family: "helvetica_cond_bold";

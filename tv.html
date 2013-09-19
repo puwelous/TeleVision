@@ -34,6 +34,9 @@
                             
                             var go_to_section;
                             
+                            if( selected_element_id == '' ) {
+                                go_to_section = '#'
+                            }
                             go_to_section = '#' + selected_element_id.substr(0, selected_element_id.length - 3 ) + 'ps'; 
                             
                             //alert(go_to_section);
@@ -89,6 +92,7 @@
                     $("#i18n_project_activities").html( $._('project_activities') );
                     $("#i18n_project_partners").html( $._('project_partners') );
                     $("#i18n_gallery").html( $._('gallery') );
+                    $("#i18n_contact").html( $._('contact') );
 
                 });
                 
@@ -108,6 +112,7 @@
                     $("#i18n_project_activities").html( $._('project_activities') );
                     $("#i18n_project_partners").html( $._('project_partners') );
                     $("#i18n_gallery").html( $._('gallery') );
+                    $("#i18n_contact").html( $._('contact') );
                 });
                 
                 String.prototype.endsWith = function(str) {
@@ -171,8 +176,12 @@
                         </div>
                     </div>
                     <div id="third_row" class="row_class">
-                        <div class="welcome_menu_item_wrapper">
-                            <div class="menu_item_text">EN | HU</div>
+                        <div id="contact_wmi" class="welcome_menu_item_wrapper">
+                            <div class="menu_item_text">
+                                <div id="i18n_contact" class="i18n_text" >
+                                    Kontakt
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="clear_both"></div>
@@ -213,8 +222,8 @@
                     <div id="gallery_smi" class="sticky_menu_item">
                         <div class="sticky_menu_item_text">Galéria</div>
                     </div>
-                    <div class="sticky_menu_item">
-                        <div class="sticky_menu_item_text">EN | HU</div>
+                    <div id="contact_smi" class="sticky_menu_item">
+                        <div class="sticky_menu_item_text">Kontakt</div>
                     </div>
                 </div>
                 <!-- right part -->
@@ -232,12 +241,13 @@
             <!-- content -->
             <div class="page_section_wrapper">
                 <!-- title -->
-                <div class="section_title_bl" style="margin-top:-80px;">informácie o projekte</div>
+                <!--style="margin-top:-80px;"-->
+                <div class="section_title_bl" >informácie o projekte</div>
                 <!--container aka wrapper -->
                 <div id="project_info_container">
                     <div id="left_part_wrapper">
                         <div class="left_part_block_item">
-                            <img src="css/images/vineyard.jpg" alt="Vineyard picture" width="314" height="179"/>
+                            <img src="css/images/vineyard.jpg" alt="Vineyard picture" />
                         </div>
                         <div class="left_part_block_item">
                             <div class="common_text">
