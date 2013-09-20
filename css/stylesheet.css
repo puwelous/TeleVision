@@ -460,14 +460,18 @@ ul.dash_circle {
 
 
 .partners_ke {
-    width: 316px;
+overflow: hidden;
+    max-width: 316px;
     height: 316px;
-    border-radius: 158px;
-    -webkit-border-radius: 158px;
-    -moz-border-radius: 158px;
-    background: url('./images/dom_alzbeta.jpg') no-repeat;
-    background-size:316px 316px;
-    margin: 10px auto;
+    /*    border-radius: 158px;
+        -webkit-border-radius: 158px;
+        -moz-border-radius: 158px;*/
+    background: url('./images/dom_alzbeta.jpg') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    /*margin: 10px auto;*/
 }
 
 .partners_mi {
@@ -500,7 +504,7 @@ ul.dash_circle {
 }
 
 .partners_text_up {
-    margin-top: 90px;
+    /*margin-top: 90px;*/
 }
 
 .partners_text_down {
@@ -777,62 +781,55 @@ ul.dash_circle {
 
 
 
-#container
+.container
 {
-width: 100%;
-margin: 10px auto;
-background-color: #fff;
-color: #333;
-border: 1px solid gray;
-/*line-height: 130%;*/
+    width: 100%;
+    margin: 10px auto;
 }
 
-/*#top
+.container .leftnav img, .container .rightnav img
 {
-padding: .5em;
-background-color: #ddd;
-border-bottom: 1px solid gray;
+    width: 100%;
+    /*margin: 10px auto;*/
+    max-width: 100%;
+    height: auto;
+    /*width="90" height="90"*/
 }
 
-#top h1
-{
-padding: 0;
-margin: 0;
-}*/
-
-#leftnav
-{
-float: left;
-width: 33%;
-/*margin: 0;
-padding: 1em;*/
+.top {
+    width: 66%;
+    float: left;
 }
 
-#rightnav
+
+.leftnav
 {
-float: right;
-width: 33%;
-/*margin: 0;
-padding: 1em;*/
+    float: left;
+    width: 33%;
+    /*margin: 0;
+    padding: 1em;*/
 }
 
-#content
+.rightnav
+{
+    float: right;
+    width: 33%;
+    /*margin: 0;
+    padding: 1em;*/
+}
+
+.content
 {
     /*width:33%;*/
-margin-left: 33%;
-margin-right: 33%;
+    margin-left: 33%;
+    margin-right: 33%;
 
-border-left: 1px solid gray;
-/*margin-right: 200px;*/
-border-right: 1px solid gray;
-/*padding: 1em;*/
-/*max-width: 36em;*/
+    /*border-left: 1px solid gray;*/
+    /*margin-right: 200px;*/
+    /*border-right: 1px solid gray;*/
+    /*padding: 1em;*/
+    /*max-width: 36em;*/
 }
-
-
-/*#leftnav p, #rightnav p { margin: 0 0 1em 0; }*/
-#content h2 { margin: 0 0 .5em 0; }
-
 
 
 
@@ -884,9 +881,9 @@ border-right: 1px solid gray;
         clear: both;
     }
 
-/*    #left_part_wrapper{
-        margin-top: -3%;
-    }*/
+    /*    #left_part_wrapper{
+            margin-top: -3%;
+        }*/
 
     #right_part_wrapper img {
         display: block;
