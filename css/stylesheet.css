@@ -12,7 +12,7 @@ root {
 
 * {
     margin: 0px 0px;
-    /*    border: red solid 1px;*/
+    border: red solid 1px;
 }
 
 html, body {
@@ -32,8 +32,8 @@ html, body {
 
 .page_section_wrapper {
     /*    padding-top: 7%;*/
-    /*height: 100%;*/
-    margin: 10% auto;
+    height: 85%;
+    margin: 7.5% auto;
     width: 85%;
 
     border: black solid 2px;
@@ -610,7 +610,7 @@ ul.dash_circle {
 
 /* hack - selecting the second .section_title_bl heading */ 
 .section_title_bl:nth-of-type(2n) {
-    margin-top: 31%;
+    /*margin-top: 50%;*/
 }
 
 /*dynamic menu items text*/
@@ -741,6 +741,37 @@ ul.dash_circle {
 
 
 
+.all_container {
+    width: 100%;
+    min-height: 50%;
+    display: inline-block;
+    margin: 0 auto;
+}
+.all_container:after {
+    content: "";
+    clear: both;
+    width: 100%;
+}
+.col4 {
+    width: 31%;
+    float: left;
+    margin: 0 1%;
+}
+.image {
+    /*text-align: center;*/
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.image img {
+    /*text-align: center;*/
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 /****************************** Media Queries ******************************/
 
 @media (max-width: 770px)
@@ -777,7 +808,6 @@ ul.dash_circle {
     .section_title_bl {
         margin-bottom: 0.5%;
         font-size: 3.3em; /* 55 px */
-        text-align: center;
     }
 
     .mybr {
@@ -785,9 +815,9 @@ ul.dash_circle {
         clear: both;
     }
 
-    #left_part_wrapper{
+/*    #left_part_wrapper{
         margin-top: -3%;
-    }
+    }*/
 
     #right_part_wrapper img {
         display: block;
