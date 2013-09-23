@@ -1,0 +1,8 @@
+jQuery.i18n.hu.strings = {
+    "about_project": "O projekte",
+    "project_aims":"Ciele projektu",
+    "project_activities":"Aktivity projektu",
+    "project_partners":"Partneri projektu",
+    "gallery":"Galéria",
+    "contact":"Kontakt"
+};
