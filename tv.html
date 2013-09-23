@@ -30,20 +30,29 @@
                     if ( typeof selected_element_id != 'undefined' ){
 					
                         // sufix check
-                        if( selected_element_id.endsWith("wmi") || selected_element_id.endsWith("vmi") || selected_element_id.endsWith("smi") || selected_element_id.endsWith("zmi")){
+                        if( selected_element_id.endsWith("wmi") || selected_element_id.endsWith("smi") ){
                             
                             var go_to_section;
+                            var go_to_position;
                             
-                            if( selected_element_id == '' ) {
-                                go_to_section = '#'
+//                            if( selected_element_id.substr(0, selected_element_id.length - 4 ) == 'aims_and_realizations' ) {
+//                                go_to_section = '#realizations_special_ps';
+//                            }else{
+                                go_to_section = '#' + selected_element_id.substr(0, selected_element_id.length - 3 ) + 'ps'; 
+//                            }
+
+                            /* aims_and_realizations_ps page section has 2 inner sections that we want to target, */
+                            /* so in this case we had to split it and target an inner element with a substraction */
+                            /* of sticky menu's height to prevent sticky menu cover the section content */
+                            if( go_to_section == '#realizations_ps' || go_to_section == '#aims_ps' ){
+                                go_to_position = $( go_to_section ).offset().top - $('#sticky_menu').height() ;
+                            }else{
+                                go_to_position = $( go_to_section ).offset().top ;
                             }
-                            go_to_section = '#' + selected_element_id.substr(0, selected_element_id.length - 3 ) + 'ps'; 
-                            
-                            //alert(go_to_section);
                             
                             // animate
                             $('html, body').animate({
-                                scrollTop: $( go_to_section ).offset().top
+                                scrollTop: go_to_position
                             }, 2000);
                         }
                     }
@@ -63,13 +72,16 @@
                         
                         // add invisible object
                         nav_hidden.css( "display", "block" );
+                        nav_hidden.css( "visibility", "visible" );
                     } else {
                         
                         // set the style back 
                         nav.removeClass("f-nav");
                         
                         // remove the object
+                        nav_hidden.css( "visibility", "invisible" );
                         nav_hidden.css( "display", "none" );
+                        
                     }
                 });
                 
@@ -144,17 +156,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="aims_and_realizations_wmi" class="welcome_menu_item_wrapper">
+                        <div id="aims_wmi" class="welcome_menu_item_wrapper">
                             <div class="menu_item_text">
                                 <div id="i18n_project_aims" class="i18n_text" >
                                     Ciele projektu
                                 </div>
                             </div>
                         </div>
-                        <div id="aims_and_realizations_vmi" class="welcome_menu_item_wrapper">
+                        <div id="realizations_wmi" class="welcome_menu_item_wrapper">
                             <div class="menu_item_text">
                                 <div id="i18n_project_activities" class="i18n_text" >
-                                    Aktivity projektu
+                                    Realizácia projektu
                                 </div>
                             </div>
                         </div>
@@ -207,11 +219,11 @@
                     <div id="abt_prjct_smi" class="sticky_menu_item">
                         <div  class="sticky_menu_item_text">O projekte</div>
                     </div>
-                    <div id="aims_and_realizations_smi" class="sticky_menu_item">
+                    <div id="aims_smi" class="sticky_menu_item">
                         <div class="sticky_menu_item_text">Ciele projektu</div>
                     </div>
-                    <div id="aims_and_realizations_zmi" class="sticky_menu_item">
-                        <div class="sticky_menu_item_text">Aktivity projektu</div>
+                    <div id="realizations_smi" class="sticky_menu_item">
+                        <div class="sticky_menu_item_text">Realizácia projektu</div>
                     </div>
                     <div id="sticky_menu_logo_item">
                         <img src="css/images/tokaj_title_logo.png" alt="Tokajske vino" height="90"  />
@@ -235,7 +247,10 @@
                     </div>
                 </div>
             </div>
+            <div class="clear_both"></div>
             <div id="sticky_menu_hidden" class="sticky_menu_hidden_class"></div>
+            <div class="clear_both"></div>
+
             <!--end of menu-->
 
             <!-- content -->
@@ -478,15 +493,15 @@
         <!--end of project info section-->
 
         <!-- project aims and project realization section -->
-        <div id="aims_and_realizations_ps" class="page_section">
+        <div id="aims_and_realization_ps" class="page_section">
 
             <!-- content -->
             <div class="page_section_wrapper">
                 <!--<div class="section_title_bl">vsdvv</div>-->
-                <div class="all_container">
+                <div id="aims_ps" class="all_container">
 
                     <!-- title nr.1 -->
-                    <div class="section_title_bl" style="float:left;">ciele projektu</div>
+                    <div class="section_title_bl" >ciele projektu</div>
                     <div class='clear_both'></div>
 
                     <div class='col4'>
@@ -566,7 +581,7 @@
                 <!--<div style="width:100%; height: 50%; border:solid red 1px;"></div>-->
 
 
-                <div class="all_container"  style="margin-top: 7.5%;"> 
+                <div id="realizations_ps" class="all_container"  > 
 
                     <!-- title nr.2 -->
                     <div class="section_title_bl">realizácia projektu</div>
@@ -856,7 +871,7 @@
                     <div style='clear: left'></div>
                 </div>
                 <!--end of Adujsanto-->
-            
+
             </div>
             <!--end of page section wrapper-->
         </div>
@@ -893,7 +908,8 @@
                         <div class="desc">názov</div>
                     </div>
                 </div>
-            </div>          
+                <div style="clear: both"></div>
+            </div>
         </div>
         <!--end of gallery section-->
 

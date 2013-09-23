@@ -26,23 +26,29 @@ html, body {
 }
 
 .page_section {
-    /*width: 100%;*/
-    border: red solid 2px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /*border: blue solid 1px;*/
 }
 
 .page_section_wrapper {
-    /*    padding-top: 7%;*/
-    height: 85%;
-    margin: 7.5% auto;
+    height:100%;
     width: 85%;
+    margin-left: auto;
+    margin-right: auto;
 
-    border: black solid 2px;
+    padding-top: 7%;
+
+    border: blue solid 1px;
 }
 
-.page_section_wrapper:nth-child(3) {
-    /*margin-top: 31%;*/
-    margin-top: 20px;
-}
+/* second title/heading of aims and realization section 
+.page_section_wrapper div.all_container:nth-child(2) div.section_title_bl{
+
+    border: brown solid 2px;
+} 
+*/
 
 /**************** welcome section ****************/
 #section_welcome {
@@ -51,8 +57,18 @@ html, body {
     width: 100%;
     height: 100%;
     /*changed from JPG to PNG*/
-    background: #ffffff  url('./images/welcome_background.png') no-repeat center top;
-    /*background-size: 100% Auto;*/
+    background: #ffffff  url('./images/welcome_background.png') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
+    background-size:cover;
+}
+
+.section_welcome_class{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*changed from JPG to PNG*/
+    background: #ffffff  url('./images/welcome_background.png') no-repeat left top;
+    background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 }
 
@@ -131,7 +147,8 @@ html, body {
     width: 100%;
     height: 80px;
 
-    /*visibility: visible;*/
+    display: block;
+    visibility: visible;
 
     /* used instead of classic rgb() and opacity */
     background-color: rgba(143, 72, 6, 0.65);
@@ -144,8 +161,18 @@ html, body {
     width: 100%;
     height: 80px;
 
+    /*display: none;*/
     visibility: hidden;
 
+    /*background-color: rgba(143, 72, 6, 0.65);*/
+}
+
+.f-nav{ 
+    z-index: 9999; 
+    position: fixed; 
+    left: 0; 
+    top: 0; 
+    width: 100%;
     background-color: rgba(143, 72, 6, 0.65);
 }
 
@@ -264,7 +291,7 @@ html, body {
     float: left;
     width: 104px;
     height: 66px;
-margin: 7px 5px;
+    margin: 7px 5px;
     /*margin-top: -10px;*/
 }
 
@@ -284,7 +311,7 @@ margin: 7px 5px;
     width: 100%;
     height: 100%;
     /*changed from PNG to JPG*/
-    background: #ffffff  url('./images/project_info_background.jpg') no-repeat center top;
+    background: #ffffff  url('./images/project_info_background.jpg') no-repeat left top;
     background-position: 50% 50%; /* for moving the background up */
     background-size:cover;
 }
@@ -316,7 +343,7 @@ margin: 7px 5px;
     max-width: 100%;
     height: auto;
 
-    border: solid purple 2px;
+    /*border: solid purple 2px;*/
 }
 
 #right_part_wrapper {
@@ -380,11 +407,11 @@ margin: 7px 5px;
 /**************** end of project info section ****************/
 
 /**************** aims and realization section ****************/
-#aims_and_realizations_ps {
+#aims_and_realization_ps {
     position: relative;
     width: 100%;
     height: 200%;
-    background: #ffffff  url('./images/aims_realization_background.png') no-repeat center top;
+    background: #ffffff  url('./images/aims_realization_background.png') no-repeat left top;
     background-position: 50% 50%;
     background-size:cover;
 }
@@ -399,14 +426,14 @@ margin: 7px 5px;
     max-width: 100%;
 }
 
-#aims_and_realizations_ps .aims_and_realization_text_block_wrapper {
+#aims_and_realization_ps .aims_and_realization_text_block_wrapper {
     position: relative;
     height: 300px;
     margin-top: 15px;
     margin-right: 16px;
 }
 
-#aims_and_realizations_ps .aims_and_realization_text_block_wrapper .block_item {
+#aims_and_realization_ps .aims_and_realization_text_block_wrapper .block_item {
 
     position: relative;
 
@@ -578,9 +605,9 @@ ul.dash_circle {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #ffffff  url('./images/contact_background.jpg') no-repeat center top;
+    background: #ffffff  url('./images/contact_background.jpg') no-repeat left top;
     background-position: 50% 50%; /* for moving the background up */
-    background-size:cover;
+    background-size: cover;
 }
 /**************** end of contact section ****************/
 
@@ -715,7 +742,7 @@ ul.dash_circle {
     font-size: 1.9em; /* 55 px */
 }
 
-#aims_and_realizations_ps .block_item .block_item_title {
+#aims_and_realization_ps .block_item .block_item_title {
 
     font-family: "helvetica_cond_thin";
     font-size: 2.5em;
@@ -748,17 +775,6 @@ ul.dash_circle {
         url("helvetica_cond_bold.ttf") format("truetype"),
         url("helvetica_cond_bold.otf") format("opentype");
 }
-
-.f-nav{ 
-    z-index: 9999; 
-    position: fixed; 
-    left: 0; 
-    top: 0; 
-    width: 100%;
-    background-color: rgba(143, 72, 6, 0.65);
-}
-
-
 
 .all_container {
     width: 100%;
@@ -908,6 +924,7 @@ ul.dash_circle {
     .page_section_wrapper {
 
         width: 95%;
+        /*padding-top: 10px;*/
 
     }
 
@@ -964,7 +981,7 @@ ul.dash_circle {
         border-radius: 118px;
         -webkit-border-radius: 118px;
         -moz-border-radius: 118px;
-        
+
         margin: 20px auto;
     }
 
@@ -974,7 +991,7 @@ ul.dash_circle {
         border-radius: 118px;
         -webkit-border-radius: 118px;
         -moz-border-radius: 118px;
-        
+
         margin: 20px auto;
     }
 
@@ -984,7 +1001,7 @@ ul.dash_circle {
         border-radius: 118px;
         -webkit-border-radius: 118px;
         -moz-border-radius: 118px;
-        
+
         margin: 20px auto;
     }    
 }
