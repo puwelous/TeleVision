@@ -40,7 +40,7 @@ html, body {
 
     padding-top: 7%;
 
-    border: blue solid 1px;
+/*    border: blue solid 1px;*/
 }
 
 /* second title/heading of aims and realization section 
@@ -86,8 +86,8 @@ html, body {
 #welcome_title {
 
     position: relative;
-    height: 258px;
-    width: 300px;
+    height: 233px;
+    max-width: 366px;
     background: url('./images/tokaj_title_logo.png') no-repeat center;
     /*background-size: 100% 100%;*/
 }
@@ -96,24 +96,23 @@ html, body {
 
     position: relative;
     height: 600px;
-    width:  300px;
-    margin: 0px auto;
-    /*border: red solid 1px;*/
+    width:  366px;
+    margin: 2% auto 0% auto;
 }
 
 #welcome_menu {
 
     position: relative;
     height: 342px;
-    width: 300px;
+    width: 366px;
     text-align: center;
 }
 
 .row_class {
-    /*height: 96px;*/
-    /*margin: 10px auto;*/
     vertical-align: middle;
-
+}
+.row_class:first-child {
+    margin-top: 10%;
 }
 
 #welcome_menu .welcome_menu_item_wrapper {
@@ -121,16 +120,25 @@ html, body {
     position: relative;
     display: inline-block;
 
-    width: 90px;
-    height: 90px;
-    line-height: 90px;
+    width: 108px;
+    height: 108px;
+    line-height: 108px;
     text-align: center;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 3px;
 
     border-radius: 50%;
     border: white solid 3px;
+}
+
+#welcome_menu .welcome_menu_item_wrapper:nth-child(1) {
+
+    margin-left: 0px;
+}
+
+#welcome_menu .welcome_menu_item_wrapper:nth-child(3) {
+
+    margin-right: 0px;
 }
 
 #welcome_menu .welcome_menu_item_wrapper:hover {
@@ -567,12 +575,12 @@ ul.dash_circle {
 
 #gallery {
     text-align: center;
-/*float:left;*/
+    /*float:left;*/
     /*width: 100%;*/
     /*border: purple 1px solid;*/
     margin: 0px auto;
     max-width: 100%;
-    
+
     height:auto;
 }
 
@@ -581,16 +589,16 @@ ul.dash_circle {
     display:inline;
     /*position: relative;*/
     float: left;
-    
+
     /*margin: 10px;*/
     height:auto;
-    
+
     /*width:20%;*/
-/*    max-width: 314px;*/
+    /*    max-width: 314px;*/
     max-width: 22%;
     /*margin-left: 3%;*/
     margin-right: 4%;
-    
+
     /*float:left;*/
     text-align:center;
     /*margin-left: 2%;*/
@@ -671,8 +679,8 @@ ul.dash_circle {
 
     display: table-cell;
 
-    height: 90px;
-    width:90px;
+    height: 115px;
+    width: 115px;
 
     vertical-align: middle;
     text-align: center;
@@ -681,7 +689,7 @@ ul.dash_circle {
 
     font-family: "helvetica_cond_bold";
     /* 25 px */
-    font-size: 2.5em;
+    font-size: 2.35em;
     color: white;
     text-transform: uppercase;
 }
