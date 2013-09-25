@@ -21,28 +21,23 @@ html, body {
     width: 100%;
 
     font-size: 62.5%;
-
-    /*font-family: "HelveticaNeue", sans-serif;*/
 }
 
 .page_section {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    /*border: blue solid 1px;*/
 }
 
 .page_section_wrapper {
     height:100%;
     width: 85%;
     max-width: 1024px;
-    
+
     margin-left: auto;
     margin-right: auto;
 
     padding-top: 8%;
-
-    /*border: blue solid 1px;*/
 }
 
 #abt_prjct_ps .page_section_wrapper {
@@ -81,27 +76,29 @@ html, body {
     background: url('./images/welcome_kosice_logo.png') no-repeat;
 }
 
-#welcome_title {
-
-    position: relative;
-    height: 233px;
-    max-width: 366px;
-    background: url('./images/tokaj_title_logo.png') no-repeat center;
-    /*background-size: 100% 100%;*/
-}
-
 #welcome_middle_wrapper{
 
     position: relative;
-    height: 600px;
+    height: auto;
     width:  366px;
-    margin: 2% auto 0% auto;
+    margin: 0% auto;
+    margin-top: 2%;
+}
+
+#welcome_title {
+
+    position: relative;
+    height: 168px;
+    max-width: 268px;
+    background: url('./images/tokaj_title_logo.png') no-repeat center;
+    /*background-size: 100% 100%;*/
+    margin: 0px auto;
 }
 
 #welcome_menu {
 
     position: relative;
-    height: 342px;
+    height: auto;
     width: 366px;
     text-align: center;
 }
@@ -109,9 +106,7 @@ html, body {
 .row_class {
     vertical-align: middle;
 }
-.row_class:first-child {
-    margin-top: 10%;
-}
+
 
 #welcome_menu .welcome_menu_item_wrapper {
 
@@ -178,7 +173,7 @@ html, body {
     /*background-color: rgba(143, 72, 6, 0.65);*/
 }
 
-.f-nav{ 
+.sticky_menu_class_flying{ 
     z-index: 9999; 
     position: fixed; 
     left: 0; 
@@ -214,7 +209,7 @@ html, body {
     left:50%;
     margin-left:-345px;
 
-    /*80 px height*/
+    /*100 px height*/
     height: 100px;
     width: 690px;
 }
@@ -232,51 +227,9 @@ html, body {
     border-radius: 50%;
     border: white solid 3px;
 
+    line-height: normal;
     text-align: center;
-}
-
-#sticky_menu .sticky_menu_item:hover {
-    cursor: pointer;
-}
-
-#sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
-    display: table-cell;
-
-    height: 80px;
-    width: 80px;
-
-    vertical-align: middle;
-    text-align: center;
-
-    line-height: normal;    
-
-    font-family: "helvetica_cond_bold";
-    /* 25 px */
-    font-size: 1.3em;
-
-    color: white;
-    text-transform: uppercase;
-
-    border-radius: 50%;
-    border-left: white solid 3px;
-
-    overflow: hidden;
-}
-
-#sticky_menu .sticky_menu_item .sticky_menu_item_right_cropped {
-
-    position:absolute;
-
-    top: 5px;
-    right: 6px;
-    width: 80px;
-    height: 80px;
-
-    font-size: 120%;
-
-    border-radius: 50%;
-    border-right: white solid 3px;
-
+    
     overflow: hidden;
 }
 
@@ -308,8 +261,6 @@ html, body {
     background-size:cover;
 }
 
-
-
 #project_info_container {
 
     position: relative;
@@ -319,6 +270,7 @@ html, body {
     max-width: 100%;
     height: auto;
 }
+
 #left_part_wrapper {
     position: relative;
     float: left;
@@ -547,7 +499,6 @@ ul.dash_circle {
     /*border: purple 1px solid;*/
     margin: 0px auto;
     max-width: 100%;
-
     height:auto;
 }
 
@@ -1034,4 +985,28 @@ ul.dash_circle {
     #abt_prjct_ps .page_section_wrapper {
         padding-top: 15px;
     }
+
+    #gallery {
+        height: 400px;
+    }
+
+    #gallery .gallery_item {
+        height:auto;
+        max-width: 30%;
+    }
+
+    #gallery .gallery_item:nth-child(4n)
+    {
+        margin-right: 4%;
+    } 
+
+    #gallery .gallery_item:nth-child(3n)
+    {
+        margin-right: 0%;
+    }
+
+    html, body {
+        height: 120%;
+    }
+
 }

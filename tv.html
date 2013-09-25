@@ -79,7 +79,7 @@
                     if ($(this).scrollTop() > sticky_menu_actual_offset ) {
 
                         // change style of a sticky menu
-                        nav.addClass("f-nav");
+                        nav.addClass("sticky_menu_class_flying");
 
                         // add invisible object
                         nav_hidden.css( "display", "block" );
@@ -87,7 +87,7 @@
                     } else {
 
                         // set the style back
-                        nav.removeClass("f-nav");
+                        nav.removeClass("sticky_menu_class_flying");
 
                         // remove the object
                         nav_hidden.css( "visibility", "invisible" );
