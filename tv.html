@@ -8,8 +8,6 @@
 
         <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
 
-        <!--https://code.google.com/p/jquery-i18n-properties/-->
-
         <script type='text/javascript' src='js/jquery.i18n.js'></script>
 
         <script type='text/javascript' src='./jquery.en.json'></script>
@@ -60,6 +58,17 @@
                     }
                 });
 
+                $("#sticky_menu_logo_item").click(
+                function( )
+                {
+                    // animate to the top
+                    $('html, body').animate(
+                    {
+                        scrollTop: 0
+                    }, 2000);
+                }
+            );
+
                 var nav = $('#sticky_menu');
                 var nav_hidden = $('#sticky_menu_hidden');
 
@@ -94,9 +103,9 @@
                 function(){
 
                     // get id and text of a target that user clicked on
-                    var selected_lang_id = $(this).attr('id');
+                    //var selected_lang_id = $(this).attr('id');
                     var selected_lang_text = $(this).text();
-                    
+
                     if( actual_locale == selected_lang_text){
                         // no need to change language
                         return ;
@@ -152,7 +161,7 @@
         <!-- welcome section -->
         <div id="section_welcome" class="page_section">
             <!-- logo -->
-            <div id="welcome_logo_kosice"></div>
+            <div id="welcome_logo_kosice" class="hoverable"></div>
             <!-- middle wrapper -->
             <div id="welcome_middle_wrapper">
                 <div id="welcome_title">
@@ -160,37 +169,37 @@
                 <!-- menu items -->
                 <div id="welcome_menu">
                     <div id="first_row" class="row_class">
-                        <div id="abt_prjct_wmi" class="welcome_menu_item_wrapper">
+                        <div id="abt_prjct_wmi" class="welcome_menu_item_wrapper hoverable">
                             <div class="menu_item_text">
                                 <div id="i18n_about_project" class="i18n_text" >
                                     O projekte
                                 </div>
                             </div>
                         </div>
-                        <div id="aims_wmi" class="welcome_menu_item_wrapper">
+                        <div id="aims_wmi" class="welcome_menu_item_wrapper hoverable">
                             <div class="menu_item_text">
                                 <div id="i18n_project_aims" class="i18n_text" >
                                     Ciele projektu
                                 </div>
                             </div>
                         </div>
-                        <div id="realizations_wmi" class="welcome_menu_item_wrapper">
+                        <div id="realizations_wmi" class="welcome_menu_item_wrapper hoverable">
                             <div class="menu_item_text">
-                                <div id="i18n_project_activities" class="i18n_text" >
+                                <div id="i18n_project_realization" class="i18n_text" >
                                     Realizácia projektu
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div id="second_row" class="row_class">
-                        <div id="our_partners_wmi" class="welcome_menu_item_wrapper">
+                        <div id="our_partners_wmi" class="welcome_menu_item_wrapper hoverable">
                             <div class="menu_item_text">
                                 <div id="i18n_project_partners" class="i18n_text" >
                                     Partneri
                                 </div>
                             </div>
                         </div>
-                        <div id="gallery_wmi" class="welcome_menu_item_wrapper">
+                        <div id="gallery_wmi" class="welcome_menu_item_wrapper hoverable">
                             <div class="menu_item_text">
                                 <div id="i18n_gallery" class="i18n_text" >
                                     Galéria
@@ -199,7 +208,7 @@
                         </div>
                     </div>
                     <div id="third_row" class="row_class">
-                        <div id="contact_wmi" class="welcome_menu_item_wrapper">
+                        <div id="contact_wmi" class="welcome_menu_item_wrapper hoverable">
                             <div class="menu_item_text">
                                 <div id="i18n_contact" class="i18n_text" >
                                     Kontakt
@@ -219,42 +228,62 @@
             <div id="sticky_menu" class="sticky_menu_class">
                 <!--left part-->
                 <div id="sticky_menu_wrapper_left">
-                    <div class="sticky_menu_item">
-                        <!--<div class="sticky_menu_item_left_cropped">-->
+                    <div class="sticky_menu_item hoverable">
                         <div id="i18n_lang_en" class="sticky_menu_item_text language_selector">en</div>
-                        <!--</div>-->
                     </div>
                 </div>
                 <!-- center part -->
                 <div id="sticky_menu_wrapper_centered">
-                    <div id="abt_prjct_smi" class="sticky_menu_item">
-                        <div  class="sticky_menu_item_text">O projekte</div>
+                    <div id="abt_prjct_smi" class="sticky_menu_item hoverable">
+                        <div  class="sticky_menu_item_text">
+                            <div id="i18n_about_project2" class="i18n_text">
+                                O projekte
+                            </div>
+                        </div>
                     </div>
-                    <div id="aims_smi" class="sticky_menu_item">
-                        <div class="sticky_menu_item_text">Ciele projektu</div>
+                    <div id="aims_smi" class="sticky_menu_item hoverable">
+                        <div class="sticky_menu_item_text">
+                            <div id="i18n_project_aims2" class="i18n_text">
+                                Ciele projektu
+                            </div>
+                        </div>
                     </div>
-                    <div id="realizations_smi" class="sticky_menu_item">
-                        <div class="sticky_menu_item_text">Realizácia projektu</div>
+                    <div id="realizations_smi" class="sticky_menu_item hoverable">
+                        <div class="sticky_menu_item_text">
+                            <div id="i18n_project_realization2" class="i18n_text">
+                                Realizácia projektu
+                            </div>
+                        </div>
                     </div>
                     <div id="sticky_menu_logo_item">
-                        <img src="css/images/tokaj_title_logo.png" alt="Tokajske vino" height="90"  />
+                        <img src="css/images/tokaj_title_logo.png" alt="Tokajske vino" />
                     </div>
-                    <div id="our_partners_smi" class="sticky_menu_item">
-                        <div  class="sticky_menu_item_text">Partneri</div>
+                    <div id="our_partners_smi" class="sticky_menu_item hoverable">
+                        <div  class="sticky_menu_item_text">
+                            <div id="i18n_project_partners2" class="i18n_text">
+                                Partneri
+                            </div>
+                        </div>
                     </div>
-                    <div id="gallery_smi" class="sticky_menu_item">
-                        <div class="sticky_menu_item_text">Galéria</div>
+                    <div id="gallery_smi" class="sticky_menu_item hoverable">
+                        <div class="sticky_menu_item_text">
+                            <div id="i18n_gallery2" class="i18n_text">
+                                Galéria
+                            </div>
+                        </div>
                     </div>
-                    <div id="contact_smi" class="sticky_menu_item">
-                        <div class="sticky_menu_item_text">Kontakt</div>
+                    <div id="contact_smi" class="sticky_menu_item hoverable">
+                        <div class="sticky_menu_item_text">
+                            <div id="i18n_contact2" class="i18n_text">
+                                Kontakt
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- right part -->
                 <div id="sticky_menu_wrapper_right">
-                    <div class="sticky_menu_item">
-                        <!--<div class="sticky_menu_item_right_cropped">-->
+                    <div class="sticky_menu_item hoverable">
                         <div id="i18n_lang_hu" class="sticky_menu_item_text language_selector">hu</div>
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -267,8 +296,11 @@
             <!-- content -->
             <div class="page_section_wrapper">
                 <!-- title -->
-                <!--style="margin-top:-80px;"-->
-                <div class="section_title_bl" >informácie o projekte</div>
+                <div class="section_title_bl" >
+                    <div id="i18n_iap_title" class="i18n_text">
+                        informácie o projekte
+                    </div>
+                </div>
                 <!--container aka wrapper -->
                 <div id="project_info_container">
                     <div id="left_part_wrapper">
@@ -277,228 +309,286 @@
                         </div>
                         <div class="left_part_block_item">
                             <div class="common_text">
-                                Tokajská vínna cesta vychádza z histórie veľkých obchodných ciest v Európe.
-                                V súčasnosti ponúka možnosť zoznámiť sa priamo vo vinohradníckej oblasti Tokaj s históriou,
-                                technológiou pestovania hrozna priamo vo vinohradoch a výrobou tokajského vína v stredovekých pivniciach.
-                                Zážitok s návštevy a poznania sa precíti ochutnávkami vína a regionálnych špecialít.
-                                Jej obohatením je miestny folklór, kultúrne podujatia, festivaly a návštevy historických pamiatok.
+                                <div id="i18n_iap_left_brief_1" class="i18n_text">
+                                    Tokajská vínna cesta vychádza z histórie veľkých obchodných ciest v Európe.
+                                    V súčasnosti ponúka možnosť zoznámiť sa priamo vo vinohradníckej oblasti Tokaj s históriou,
+                                    technológiou pestovania hrozna priamo vo vinohradoch a výrobou tokajského vína v stredovekých pivniciach.
+                                    Zážitok s návštevy a poznania sa precíti ochutnávkami vína a regionálnych špecialít.
+                                    Jej obohatením je miestny folklór, kultúrne podujatia, festivaly a návštevy historických pamiatok.
+                                </div>
                             </div>
                         </div>
                         <div class="left_part_block_item">
                             <div class="common_text">
-                                Návšteva vinohradníckej oblasti Tokaj so stredovekými vinnými pivnicami, kde možno ochutnať v tej najlepšej
-                                atmosfére tokajské vína dozrievajúce v drevených dubových sudoch niekoľko rokov je zážitkom, na ktorý sa nezabúda.
+                                <div id="i18n_iap_left_brief_2" class="i18n_text">
+                                    Návšteva vinohradníckej oblasti Tokaj so stredovekými vinnými pivnicami, kde možno ochutnať v tej najlepšej
+                                    atmosfére tokajské vína dozrievajúce v drevených dubových sudoch niekoľko rokov je zážitkom, na ktorý sa nezabúda.
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div id="right_part_wrapper">
-                        <!-- text divs -->
-                        <div>
-                            <!-- "pre" row -->
-                            <div class="table_text_bold">
+                </div>
+                <div id="right_part_wrapper">
+                    <!-- text divs -->
+                    <div>
+                        <!-- "pre" row -->
+                        <div class="table_text_bold">
+                            <div id="i18n_iap_right_top" class="i18n_text">
                                 Projekt s oficiálnym názvom Rozvoj spolupráce partnerských miest na historickej Tokajskej vinnej ceste bol schválený Spoločným monitorovacím výborom pre program cezhraničnej spolupráce Maďarská republika – Slovenská republika dňa 26. apríla 2012.Projekt je financovaný: 85% z ERDF, 10% zo štátneho rozpočtu a 5% z vlastných zdrojov.
                             </div>
-                            <div class="mybr"></div>
+                        </div>
+                        <div class="mybr"></div>
 
-                            <!-- first row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        <!-- first row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_1" class="i18n_text">
                                             Akronym (skrátený názov):
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_1" class="i18n_text">
                                             Tokajská vínna cesta / Tokaji Borút
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- second row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        </div>
+                        <!-- second row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_2" class="i18n_text">
                                             Názov projektu:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_2" class="i18n_text">
                                             Rozvoj spolupráce partnerských miest na historickej Tokajskej vinnej ceste
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- third row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        </div>
+                        <!-- third row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_3" class="i18n_text">
                                             Kód projektu:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_3" class="i18n_text">
                                             HUSK/1101/1.3.1/0117
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- fourth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        </div>
+                        <!-- fourth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_4" class="i18n_text">
                                             Operačný program:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_4" class="i18n_text">
                                             Program cezhraničnej spolupráce Maďarská republika – Slovenská republika 2007 - 2013
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mybr"></div>
                             </div>
-                            <!-- fifth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                            <div class="mybr"></div>
+                        </div>
+                        <!-- fifth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_5" class="i18n_text">
                                             Prioritná os:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_5" class="i18n_text">
                                             1. Hospodárstvo a spoločnosť
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- sixth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        </div>
+                        <!-- sixth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_6" class="i18n_text">
                                             Oblasť podpory:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_6" class="i18n_text">
                                             1. 3 Rozvoj spoločného turizmu
                                         </div>
-                                    </div></div>
-                            </div>
-                            <!-- seventh row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                                    </div>
+                                </div></div>
+                        </div>
+                        <!-- seventh row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_7" class="i18n_text">
                                             Opatrenie:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_7" class="i18n_text">
                                             1.3.1 Spoločný rozvoj produktov turizmu, atrakcií, organizácií destilačného manažmentu a súvisiacej infraštruktúry
                                         </div>
                                     </div>
-                                    <div class="mybr"></div>
-                                </div></div>
+                                </div>
+                                <div class="mybr"></div>
+                            </div></div>
 
-                            <!-- eight row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        <!-- eight row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_8" class="i18n_text">
                                             Celkový projektový rozpočet:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_8" class="i18n_text">
                                             497 552,48.- EUR
                                         </div>
                                     </div>
-                                </div></div>
-                            <!-- ninth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                                </div>
+                            </div></div>
+                        <!-- ninth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_9" class="i18n_text">
                                             Schválený rozpočet pre mesto Košice:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_9" class="i18n_text">
                                             165 302,50.- EUR
                                         </div>
                                     </div>
-                                </div> </div>
-                            <!-- tenth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                                </div>
+                            </div> </div>
+                        <!-- tenth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_10" class="i18n_text">
                                             Rozpočet pre mesto Abaújszántó:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_10" class="i18n_text">
                                             282 249,98.- EUR
                                         </div>
                                     </div>
-                                </div></div>
-                            <!-- eleventh row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                                </div>
+                            </div></div>
+                        <!-- eleventh row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_11" class="i18n_text">
                                             Rozpočet pre Župné mesto Miskolc:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_11" class="i18n_text">
                                             50 000.- EUR
                                         </div>
                                     </div>
-                                    <div class="mybr"></div>
-                                </div></div>
+                                </div>
+                                <div class="mybr"></div>
+                            </div></div>
 
-                            <!-- twelwth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                        <!-- twelwth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_12" class="i18n_text">
                                             Začiatok implementácie projektu:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_12" class="i18n_text">
                                             1. októbra  2012
                                         </div>
                                     </div>
-                                </div></div>
-                            <!-- thirteenth row of a right part -->
-                            <div class="project_info_right_part_text_wrapper">
-                                <div class="project_info_right_part_row">
-                                    <div class="left_column">
-                                        <div class="table_text_bold">
+                                </div>
+                            </div></div>
+                        <!-- thirteenth row of a right part -->
+                        <div class="project_info_right_part_text_wrapper">
+                            <div class="project_info_right_part_row">
+                                <div class="left_column">
+                                    <div class="table_text_bold">
+                                        <div id="i18n_iap_right_lc_13" class="i18n_text">
                                             Koniec projektových aktivít:
                                         </div>
                                     </div>
-                                    <div class="right_column">
-                                        <div class="common_text small">
+                                </div>
+                                <div class="right_column">
+                                    <div class="common_text small">
+                                        <div id="i18n_iap_right_rc_13" class="i18n_text">
                                             30. septembra  2014
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- logos -->
-                        <img src="css/images/loga-02.png" alt="Loga" />
                     </div>
-                    <div style="clear: both"></div>
+                    <!-- logos -->
+                    <img src="css/images/loga-02.png" alt="Loga" />
                 </div>
+                <div class="clear_both"></div>
             </div>
         </div>
         <!--end of project info section-->
@@ -512,7 +602,11 @@
                 <div id="aims_ps" class="all_container">
 
                     <!-- title nr.1 -->
-                    <div class="section_title_bl" >ciele projektu</div>
+                    <div class="section_title_bl" >
+                        <div id="i18n_pa_title" class="i18n_text">
+                            ciele projektu
+                        </div>
+                    </div>
                     <div class='clear_both'></div>
 
                     <div class='col4'>
@@ -522,10 +616,14 @@
                         <div class='copy'>
                             <div class="block_item">
                                 <div class="block_item_title">
-                                    hlavný cieľ projektu:
+                                    <div id="i18n_pa_main_aim" class="i18n_text">
+                                        hlavný cieľ projektu:
+                                    </div>
                                 </div>
                                 <div class="common_text">
-                                    Vzájomné oboznámenie ľudí na oboch stranách hraníc so svojimi stáročnými kultúrnymi tradíciami, budovanie a posilnenie existujúcich partnerských vzťahov a prehlbovanie vzájomne prospešnej spolupráce
+                                    <div id="i18n_pa_main_aim_p" class="i18n_text">
+                                        Vzájomné oboznámenie ľudí na oboch stranách hraníc so svojimi stáročnými kultúrnymi tradíciami, budovanie a posilnenie existujúcich partnerských vzťahov a prehlbovanie vzájomne prospešnej spolupráce
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -538,18 +636,26 @@
                         <div class='copy'>
                             <div class="block_item">
                                 <div class="block_item_title">
-                                    špecifické ciele:
+                                    <div id="i18n_pa_spec_aims" class="i18n_text">
+                                        špecifické ciele:
+                                    </div>
                                 </div>
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_pa_spec_aims_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_pa_spec_aims_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                         <li>
-                                            V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            <span id="i18n_pa_spec_aims_p3" class="i18n_text">
+                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -564,21 +670,31 @@
                         <div class='copy'>
                             <div class="block_item">
                                 <div class="block_item_title">
-                                    aktivity projektu:
+                                    <div id="i18n_pa_proj_act" class="i18n_text">
+                                        aktivity projektu:
+                                    </div>
                                 </div>
                                 <div class="common_text">
                                     <ul class="dash_circle">
                                         <li>
-                                            Založenie vinárskeho múzea v Košiciach
+                                            <span id="i18n_pa_proj_act_p1" class="i18n_text">
+                                                Založenie vinárskeho múzea v Košiciach
+                                            </span>
                                         </li>
                                         <li>
-                                            Založenie Múzeum tokajských vín v Dome ulánov v Abaújszántó
+                                            <span id="i18n_pa_proj_act_p2" class="i18n_text">
+                                                Založenie Múzeum tokajských vín v Dome ulánov v Abaújszántó
+                                            </span>
                                         </li>
                                         <li>
-                                            Trojjazyčná vedecko - populizačná kniha o regióne Tokaj a tokajských vínach
+                                            <span id="i18n_pa_proj_act_p3" class="i18n_text">
+                                                Trojjazyčná vedecko - populizačná kniha o regióne Tokaj a tokajských vínach
+                                            </span>
                                         </li>
                                         <li>
-                                            Medzinárodná vinárska konferencia
+                                            <span id="i18n_pa_proj_act_p4" class="i18n_text">
+                                                Medzinárodná vinárska konferencia
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -588,24 +704,28 @@
                     </div>
                 </div>
 
-                <!--hack: setting next part to the center of a parent ; margin-top: 50% -->
-                <!--<div style="width:100%; height: 50%; border:solid red 1px;"></div>-->
-
-
                 <div id="realizations_ps" class="all_container"  >
 
                     <!-- title nr.2 -->
-                    <div class="section_title_bl">realizácia projektu</div>
+                    <div class="section_title_bl">
+                        <div id="i18n_pr_title" class="i18n_text">
+                            realizácia projektu
+                        </div>
+                    </div>
                     <div class='clear_both'></div>
 
                     <div class='col4'>
                         <div class='copy'>
                             <div class="block_item">
                                 <div class="block_item_title">
-                                    hlavný cieľ projektu:
+                                    <div id="i18n_pr_main_aim" class="i18n_text">
+                                        hlavný cieľ projektu:
+                                    </div>
                                 </div>
                                 <div class="common_text">
-                                    Vzájomné oboznámenie ľudí na oboch stranách hraníc so svojimi stáročnými kultúrnymi tradíciami, budovanie a posilnenie existujúcich partnerských vzťahov a prehlbovanie vzájomne prospešnej spolupráce
+                                    <div id="i18n_pr_main_aim_p" class="i18n_text">
+                                        Vzájomné oboznámenie ľudí na oboch stranách hraníc so svojimi stáročnými kultúrnymi tradíciami, budovanie a posilnenie existujúcich partnerských vzťahov a prehlbovanie vzájomne prospešnej spolupráce
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -615,18 +735,26 @@
                         <div class='copy'>
                             <div class="block_item">
                                 <div class="block_item_title">
-                                    špecifické ciele:
+                                    <div id="i18n_pr_spec_aims" class="i18n_text">
+                                        špecifické ciele:
+                                    </div>
                                 </div>
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_pr_spec_aims_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_pr_spec_aims_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                         <li>
-                                            V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            <span id="i18n_pr_spec_aims_p3" class="i18n_text">
+                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -638,21 +766,31 @@
                         <div class='copy'>
                             <div class="block_item">
                                 <div class="block_item_title">
-                                    aktivity projektu:
+                                    <div id="i18n_pr_proj_act" class="i18n_text">
+                                        aktivity projektu:
+                                    </div>
                                 </div>
                                 <div class="common_text">
                                     <ul class="dash_circle">
                                         <li>
-                                            Založenie vinárskeho múzea v Košiciach
+                                            <span id="i18n_pr_proj_act_p1" class="i18n_text">
+                                                Založenie vinárskeho múzea v Košiciach
+                                            </span>
                                         </li>
                                         <li>
-                                            Založenie Múzeum tokajských vín v Dome ulánov v Abaújszántó
+                                            <span id="i18n_pr_proj_act_p2" class="i18n_text">
+                                                Založenie Múzeum tokajských vín v Dome ulánov v Abaújszántó
+                                            </span>
                                         </li>
                                         <li>
-                                            Trojjazyčná vedecko - populizačná kniha o regióne Tokaj a tokajských vínach
+                                            <span id="i18n_pr_proj_act_p3" class="i18n_text">
+                                                Trojjazyčná vedecko - populizačná kniha o regióne Tokaj a tokajských vínach
+                                            </span>
                                         </li>
                                         <li>
-                                            Medzinárodná vinárska konferencia
+                                            <span id="i18n_pr_proj_act_p4" class="i18n_text">
+                                                Medzinárodná vinárska konferencia
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -660,6 +798,7 @@
                         </div>
                         <div class='clear_both'></div>
                     </div>
+
                     <div class='clear_both'></div>
                 </div>
                 <!--<div class='clear_both'></div>-->
@@ -674,26 +813,36 @@
         <div id="our_partners_ps" class="page_section">
             <div class="page_section_wrapper">
 
-                <div class="section_title_bl">naši partneri:</div>
+                <div class="section_title_bl">
+                    <div id="i18n_op_title" class="i18n_text">
+                        naši partneri:
+                    </div>
+                </div>
 
                 <!--Kosice-->
                 <div class="row_container">
                     <div class="left_text_part">
-                        <div class="top" style="display:table-row;">
+                        <div class="top">
                             <img src="css/images/erb_ke.png" alt="Ke erb" />
-                            <div class="partners_logo_desc">vedúci partner:<br />mesto košice</div>
+                            <div class="partners_logo_desc">
+                                <div id="i18n_op_ke_heading" class="i18n_text">
+                                    vedúci partner:<br />mesto košice
+                                </div>
+                            </div>
                         </div>
                         <div class="bottom_left">
                             <div class="partners_text_logo">
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií,
-                                            zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_op_ke_b1_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky
-                                            spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_op_ke_b1_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -702,8 +851,9 @@
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva,
-                                            spolupráce a dobrej nálady.
+                                            <span id="i18n_op_ke_b1_p3" class="i18n_text">
+                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -714,12 +864,14 @@
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií,
-                                            zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_op_ke_b2_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky
-                                            spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_op_ke_b2_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -727,8 +879,9 @@
                                     <div class="common_text">
                                         <ul class="dash_exp_pref">
                                             <li>
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva,
-                                                spolupráce a dobrej nálady.
+                                                <span id="i18n_op_ke_b2_p3" class="i18n_text">
+                                                    V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                </span>
                                             </li>
                                         </ul>
                                     </div>
@@ -741,7 +894,7 @@
                         </div>
                     </div>
 
-                    <div style='clear: left'></div>
+                    <div class="clear_both"></div>
                 </div>
                 <!--end of Kosice-->
 
@@ -753,20 +906,26 @@
                     </div>
                     <div class="right_text_part">
                         <div class="top">
-                            <img src="css/images/erb_mi.png" align="left" alt="Miskolc erb" width="90" height="90"/>
-                            <div class="partners_logo_desc">mesto miskolc</div>
+                            <img src="css/images/erb_mi.png" alt="Miskolc erb" />
+                            <div class="partners_logo_desc">
+                                <div id="i18n_op_mc_heading" class="i18n_text">
+                                    mesto miskolc
+                                </div>
+                            </div>
                         </div>
                         <div class="bottom_left">
                             <div class="partners_text_logo">
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií,
-                                            zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_op_mc_b1_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky
-                                            spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_op_mc_b1_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -775,8 +934,9 @@
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva,
-                                            spolupráce a dobrej nálady.
+                                            <span id="i18n_op_mc_b1_p3" class="i18n_text">
+                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -787,12 +947,14 @@
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií,
-                                            zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_op_mc_b2_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky
-                                            spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_op_mc_b2_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -800,8 +962,9 @@
                                     <div class="common_text">
                                         <ul class="dash_exp_pref">
                                             <li>
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva,
-                                                spolupráce a dobrej nálady.
+                                                <span id="i18n_op_mc_b2_p3" class="i18n_text">
+                                                    V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                </span>
                                             </li>
                                         </ul>
                                     </div>
@@ -810,7 +973,7 @@
                         </div>
                     </div>
 
-                    <div style='clear: left'></div>
+                    <div class="clear_both"></div>
                 </div>
                 <!--End of Miskolc-->
 
@@ -818,20 +981,26 @@
                 <div class="row_container">
                     <div class="left_text_part">
                         <div class="top">
-                            <img src="css/images/erb_ab.png" align="left" alt="Abujszanto erb" width="90" height="90"/>
-                            <div class="partners_logo_desc">mesto adujszantó</div>
+                            <img src="css/images/erb_ab.png" alt="Abujszanto erb" />
+                            <div class="partners_logo_desc">
+                                <div id="i18n_op_ab_heading" class="i18n_text">
+                                    mesto adujszantó
+                                </div>
+                            </div>
                         </div>
                         <div class="bottom_left">
                             <div class="partners_text_logo">
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií,
-                                            zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_op_ab_b1_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky
-                                            spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_op_ab_b1_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -840,8 +1009,10 @@
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva,
-                                            spolupráce a dobrej nálady.
+                                            <span id="i18n_op_ab_b1_p3" class="i18n_text">
+                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                            </span>                                            
+
                                         </li>
                                     </ul>
                                 </div>
@@ -852,12 +1023,14 @@
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
-                                            Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií,
-                                            zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            <span id="i18n_op_ab_b2_p1" class="i18n_text">
+                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                            </span>
                                         </li>
                                         <li>
-                                            Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky
-                                            spolupatričnými regiónmi a ich obyvateľstvom
+                                            <span id="i18n_op_ab_b2_p2" class="i18n_text">
+                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                            </span>
                                         </li>
                                     </ul>
                                 </div>
@@ -865,8 +1038,9 @@
                                     <div class="common_text">
                                         <ul class="dash_exp_pref">
                                             <li>
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva,
-                                                spolupráce a dobrej nálady.
+                                                <span id="i18n_op_ab_b2_p3" class="i18n_text">
+                                                    V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                </span>
                                             </li>
                                         </ul>
                                     </div>
@@ -879,7 +1053,7 @@
                         </div>
                     </div>
 
-                    <div style='clear: left'></div>
+                    <div class="clear_both"></div>
                 </div>
                 <!--end of Adujsanto-->
 
@@ -891,43 +1065,79 @@
         <!-- gallery section -->
         <div id="gallery_ps" class="page_section">
             <div class="page_section_wrapper">
-                <div class="section_title_bl">galéria</div>
+                <div class="section_title_bl">
+                    <div id="i18n_ga_title" class="i18n_text">
+                        galéria
+                    </div>
+                </div>
                 <div id="gallery">
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title1" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title2" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title3" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title4" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title5" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title6" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title7" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_item">
                         <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">názov</div>
+                        <div class="desc">
+                            <div id="i18n_ga_img_title8" class="i18n_text">
+                                názov
+                            </div>
+                        </div>
                     </div>
-                    <div style="clear: both"></div>
+                    <div class="clear_both"></div>
                 </div>
-                <div style="clear: both"></div>
+                <div class="clear_both"></div>
             </div>
         </div>
         <!--end of gallery section-->
@@ -936,7 +1146,11 @@
         <div id="contact_ps" class="page_section">
             <div class="page_section_wrapper">
                 <div class="">
-                    <div class="section_title_wh">kontakt</div>
+                    <div class="section_title_wh">
+                        <div id="i18n_co_title" class="i18n_text">
+                            kontakt
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

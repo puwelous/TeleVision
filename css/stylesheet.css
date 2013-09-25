@@ -6,7 +6,7 @@
         One common stylesheet file per a page.
 */
 
-root { 
+root {
     display: block;
 }
 
@@ -35,20 +35,19 @@ html, body {
 .page_section_wrapper {
     height:100%;
     width: 85%;
+    max-width: 1024px;
+    
     margin-left: auto;
     margin-right: auto;
 
-    padding-top: 7%;
+    padding-top: 8%;
 
-/*    border: blue solid 1px;*/
+    /*border: blue solid 1px;*/
 }
 
-/* second title/heading of aims and realization section 
-.page_section_wrapper div.all_container:nth-child(2) div.section_title_bl{
-
-    border: brown solid 2px;
-} 
-*/
+#abt_prjct_ps .page_section_wrapper {
+    padding-top: 0%;
+}
 
 /**************** welcome section ****************/
 #section_welcome {
@@ -62,7 +61,7 @@ html, body {
     background-size:cover;
 }
 
-.section_welcome_class{
+.section_welcome_class {
     position: relative;
     width: 100%;
     height: 100%;
@@ -74,7 +73,6 @@ html, body {
 
 #welcome_logo_kosice {
 
-    /*absolute position ? */
     position: absolute;
     height: 85px;
     width: 88px;
@@ -141,9 +139,14 @@ html, body {
     margin-right: 0px;
 }
 
-#welcome_menu .welcome_menu_item_wrapper:hover {
+.hoverable:hover {
     cursor: pointer;
-    background-color: white;
+    background-color: rgba(255,255,255, 0.33);
+}
+
+.hoverable:active {
+    cursor: pointer;
+    background-color: rgba(255,255,255, 0.66);
 }
 /**************** end of welcome section ****************/
 
@@ -153,7 +156,7 @@ html, body {
     position: relative;
 
     width: 100%;
-    height: 80px;
+    height: 100px;
 
     display: block;
     visibility: visible;
@@ -167,7 +170,7 @@ html, body {
     position: relative;
 
     width: 100%;
-    height: 80px;
+    height: 100px;
 
     /*display: none;*/
     visibility: hidden;
@@ -200,8 +203,7 @@ html, body {
 
     height: 100%;
 
-    right:0px;
-
+    right: 0px;
 }
 
 
@@ -210,13 +212,11 @@ html, body {
     position:absolute;
 
     left:50%;
-    margin-left:-285px;
+    margin-left:-345px;
 
     /*80 px height*/
-    height: 80px;
-    width: 570px;
-    /*border: solid red 1px;*/
-
+    height: 100px;
+    width: 690px;
 }
 
 #sticky_menu .sticky_menu_item {
@@ -224,8 +224,8 @@ html, body {
     position:relative;
 
     float: left;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
 
     margin: 7px 5px;
 
@@ -242,8 +242,8 @@ html, body {
 #sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
     display: table-cell;
 
-    height: 50px;
-    width:50px;
+    height: 80px;
+    width: 80px;
 
     vertical-align: middle;
     text-align: center;
@@ -253,23 +253,10 @@ html, body {
     font-family: "helvetica_cond_bold";
     /* 25 px */
     font-size: 1.3em;
-    /*    position:absolute;*/
-    /*    margin-left: 0.65em;
-        margin-top: 0.65em;*/
 
     color: white;
     text-transform: uppercase;
 
-
-    /*    position:absolute;
-    
-        top: 5px;
-        left: 6px;    
-        width: 50px;
-        height: 50px;
-    
-        font-size: 120%;
-    */
     border-radius: 50%;
     border-left: white solid 3px;
 
@@ -282,8 +269,8 @@ html, body {
 
     top: 5px;
     right: 6px;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 
     font-size: 120%;
 
@@ -299,16 +286,13 @@ html, body {
     float: left;
     width: 104px;
     height: 66px;
-    margin: 7px 5px;
-    /*margin-top: -10px;*/
+    margin: 17px 5px;
 }
 
 #sticky_menu_logo_item img {
 
     float: left;
-    /*width: 141px;*/
     height: 66px;
-    /*margin-top: -10px;*/
 }
 
 /* end of sticky menu*/
@@ -338,46 +322,29 @@ html, body {
 #left_part_wrapper {
     position: relative;
     float: left;
-    /*display: inline-block;*/
     width: 32%;
     height: auto;
-
-    /*border: solid purple 1px;*/
 }
 
 #left_part_wrapper img {
-
-    /*width: 100%;*/
     max-width: 100%;
     height: auto;
-
-    /*border: solid purple 2px;*/
 }
 
 #right_part_wrapper {
     position: relative;
     float: right;
-    /*display: inline-block;*/
     width: 66%;
-    /*height: max-content;*/
-
-    /*max-height: 100%;*/
-
-    /*border: solid orange 1px;*/
 }
 
 .left_part_block_item {
 
     position: relative;
 
-    /*width: 314px;*/
     height: 30%;
     width: 90%;
-    margin-left: 5%;
+
     margin-right: 5%;
-
-
-    /*border: solid orange 1px;*/
     margin-bottom: 5%;
 }
 
@@ -695,12 +662,17 @@ ul.dash_circle {
 }
 
 /* sticky menu items text */
+#sticky_menu .sticky_menu_item_text.language_selector {
+    /*just larger font*/
+    font-size: 2em;
+}
+
 #sticky_menu .sticky_menu_item_text {
 
     display: table-cell;
 
-    height: 60px;
-    width:60px;
+    height: 80px;
+    width: 80px;
 
     position: relative;
 
@@ -714,7 +686,15 @@ ul.dash_circle {
     text-transform: uppercase;
 
     /* 18 px */
-    font-size: 1.8em; 
+    font-size: 1.838em; 
+}
+
+
+
+#i18n_lang_hu {
+
+    color: blue;
+    font-size: 2em; 
 }
 
 #our_partners_ps img {
@@ -814,6 +794,10 @@ ul.dash_circle {
     float: left;
     margin: 0 1%;
 }
+.col4:nth-of-type(1) {
+    margin-left: 0%;
+    border: solid red 1px;
+}
 .image {
     /*text-align: center;*/
     width: 100%;
@@ -826,14 +810,6 @@ ul.dash_circle {
     height: 100%;
 }
 
-
-
-
-
-
-
-
-
 .container
 {
     width: 100%;
@@ -843,10 +819,8 @@ ul.dash_circle {
 .container .leftnav img, .container .rightnav img
 {
     width: 100%;
-    /*margin: 10px auto;*/
     max-width: 100%;
     height: auto;
-    /*width="90" height="90"*/
 }
 
 .top {
@@ -860,16 +834,12 @@ ul.dash_circle {
 {
     float: left;
     width: 33%;
-    /*margin: 0;
-    padding: 1em;*/
 }
 
 .rightnav
 {
     float: right;
     width: 33%;
-    /*margin: 0;
-    padding: 1em;*/
 }
 
 .content
@@ -877,12 +847,6 @@ ul.dash_circle {
     /*width:33%;*/
     margin-left: 33%;
     margin-right: 33%;
-
-    /*border-left: 1px solid gray;*/
-    /*margin-right: 200px;*/
-    /*border-right: 1px solid gray;*/
-    /*padding: 1em;*/
-    /*max-width: 36em;*/
 }
 
 
@@ -896,10 +860,8 @@ ul.dash_circle {
 .row_container .leftnav img, .container .rightnav img
 {
     width: 100%;
-    /*margin: 10px auto;*/
     max-width: 100%;
     height: auto;
-    /*width="90" height="90"*/
 }
 .left_text_part{
     width: 66%;
@@ -927,8 +889,9 @@ ul.dash_circle {
     float:right;
 }
 
+.i18n_text{
 
-
+}
 
 /****************************** Media Queries ******************************/
 
@@ -946,13 +909,10 @@ ul.dash_circle {
     .page_section_wrapper {
 
         width: 95%;
-        /*padding-top: 10px;*/
-
     }
 
     .common_text {
-        font-size: 1.95em;  
-        /*20 px*/ 
+        font-size: 1.95em;
     }
 
     .small {
@@ -961,12 +921,12 @@ ul.dash_circle {
 
     .section_title_wh {
         margin-bottom: 0.5%;
-        font-size: 3.3em; /* 55 px */
+        font-size: 3.3em;
     }
 
     .section_title_bl {
         margin-bottom: 0.5%;
-        font-size: 3.3em; /* 55 px */
+        font-size: 3.3em;
     }
 
     .mybr {
@@ -974,15 +934,10 @@ ul.dash_circle {
         clear: both;
     }
 
-    /*    #left_part_wrapper{
-            margin-top: -3%;
-        }*/
-
     #right_part_wrapper img {
         display: block;
         vertical-align: middle;
     }
-
 
     .table_text_bold {
         font-size: 1.8em;
@@ -992,7 +947,6 @@ ul.dash_circle {
 
         margin-left: 3%;
         margin-right: 3%;
-
         margin-bottom: 5%;
     }
 
@@ -1025,5 +979,59 @@ ul.dash_circle {
         -moz-border-radius: 118px;
 
         margin: 20px auto;
+    }
+
+
+    .sticky_menu_class {
+        height: 80px;
+    }
+
+    .sticky_menu_hidden_class {
+        height: 80px;
+    }
+
+    #sticky_menu_wrapper_centered {
+
+        margin-left:-258px;
+
+        height: 80px;
+        width: 516px;
+    }
+
+    #sticky_menu .sticky_menu_item {
+        width: 70px;
+        height: 70px;
+        margin: 2px 5px;
+        border: white solid 3px;
+    }
+
+    #sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
+
+        height: 70px;
+        width: 70px;
+        font-size: 1.3em;
+    }
+
+    #sticky_menu .sticky_menu_item .sticky_menu_item_right_cropped {
+
+        height: 70px;
+        width: 70px;
+        font-size: 1.3em;
     }    
+
+    #sticky_menu .sticky_menu_item_text {
+        height: 70px;
+        width: 70px;
+        font-size: 1.6em; 
+    }
+
+    .page_section_wrapper {
+
+        /*same as sticky menu height + 5px*/
+        padding-top: 85px;
+    }
+
+    #abt_prjct_ps .page_section_wrapper {
+        padding-top: 15px;
+    }
 }
