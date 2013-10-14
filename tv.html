@@ -5,22 +5,366 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
         <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
-
+        <link rel="stylesheet" type="text/css" media="all" href="css/jquery.lightbox-0.5.css" />
+        
         <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
-
         <script type='text/javascript' src='js/jquery.i18n.js'></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.lightbox-0.5.min.js"></script>
+        <script type="text/javascript">
 
-        <script type='text/javascript' src='./jquery.en.json'></script>
-        <script type='text/javascript' src='example.en.json'></script>
+            $.i18n.en = {
+                numeralBase : 2406,
+                numeralPrefix:"u0"
+                /*
+                 * additional values that could be added
+                 * 
+                 * monetary format
+                 * non-monetary numeric format
+                 * date format
+                 * time format
+                 * yes, no  for yes, no questions
+                 */
+            };
+            
+            $.i18n.sk = {};
+            $.i18n.hu = {};
+            
+            
+            jQuery.i18n.en.strings = {
+                "about_project": "About project",
+                "project_aims":"Project aims",
+                "project_realization":"Project activities",
+                "project_partners":"Our partners",
+                "gallery":"Gallery",
+                "contact":"Contact",
 
-        <script type='text/javascript' src='./jquery.hu.json'></script>
-        <script type='text/javascript' src='example.hu.json'></script>
+                "about_project2": "About project",
+                "project_aims2":"Project aims",
+                "project_realization2":"Project activities",
+                "project_partners2":"Our partners",
+                "gallery2":"Gallery",
+                "contact2":"Contact",
+    
+                "iap_title":"information about the project",
+                "iap_left_brief_1":"The Tokaj Wine Route is based on the history of major trading routes in Europe. Currently it offers the opportunity to familiarize with the history of the technology of grapevine cultivation directly in the vineyards and with manufacture of the Tokaj wines in the mediaeval cellars. The experience of the visitors is highlighted by the degustation of the traditional vines and regional specialties. The enrichment is represented by the local folklore, cultural events, festivals and sightseeing of the historical monuments.",
+                "iap_left_brief_2":"Visiting the Tokaj wine region and its medieval wine cellars, where in the most astonishing  atmosphere Tokay wines in wooden oak casks are matured for several years, is an experience never to be forgotten.",
+                "iap_right_top":"The project with the official name: Development of the cooperation of partner cities on the historical Tokaj Wine Route was approved by the Joint Monitoring Committee of the program of cross border cooperation Hungary - Slovak Republic on April 26th 2012. The project is funded 85% from the ERDF, 10% from the state budget and 5% from own funds.",
+                "iap_right_lc_1":"Acronym:",
+                "iap_right_rc_1":"The Tokaj vine route",
+                "iap_right_lc_2":"Project name:",
+                "iap_right_rc_2":"Development of cooperation of partner cities on the historical Tokaj Wine Route",
+                "iap_right_lc_3":"Project code:",
+                "iap_right_rc_3":"HUSK/1101/1.3.1/0117",
+                "iap_right_lc_4":"Operation program:",
+                "iap_right_rc_4":"Program of cross border cooperation Hungary - Slovak Republic 2007-2013",
+                "iap_right_lc_5":"Priority axis:",
+                "iap_right_rc_5":"1. Economy and society",
+                "iap_right_lc_6":"Area of support:",
+                "iap_right_rc_6":"1.3 Development of joint tourism",
+                "iap_right_lc_7":"Measure:",
+                "iap_right_rc_7":"1.3.1 Joint development of tourism products, attractions, destination management organizations and related infrastructure",
+                "iap_right_lc_8":"Total project budget:",
+                "iap_right_rc_8":"497 552,48.- EUR",
+                "iap_right_lc_9":"Approved budget of KoĹˇice:",
+                "iap_right_rc_9":"165 302,50.- EUR",
+                "iap_right_lc_10":"Budget of AbaĂşjszĂˇntĂł:",
+                "iap_right_rc_10":"282 249,98.- EUR",
+                "iap_right_lc_11":"Budget of Miskolc:",
+                "iap_right_rc_11":"50 000.- EUR", 
+                "iap_right_lc_12":"Start of the project implementation:",
+                "iap_right_rc_12":"1st October 2012",
+                "iap_right_lc_13":"End of the project activities:",
+                "iap_right_rc_13":"30th September  2014",
+    
+                "pa_title":"project aims",
+                "pa_main_aim":"The main objective:",
+                "pa_main_aim_p":"- Mutual awareness of the people on both sides of the border with their centuries-old cultural traditions, building and strengthening existing partnerships and enhancing mutually beneficial cooperation",
+                "pa_spec_aims":"specific objective:",
+                "pa_spec_aims_p1":"Raising awareness of the citizens about the common cultural and historical traditions, revival and strengthening of common traditions, customs, revival of the centuries old of wine culture on both sides of the border",
+                "pa_spec_aims_p2":"Joint development and creation of tourism products as the basis of building comprehension and friendship between the historically tied regions and population",
+                "pa_spec_aims_p3":"Following the events of the European Capital of Culture restores the tradition of the Tokaj Wine Route- the routes of friendship, cooperation and astonishing atmosphere",
+                "pa_proj_act":"project activities:",
+                "pa_proj_act_p1":"The establishment of a wine museum in Kosice",    
+                "pa_proj_act_p2":"The establishment of the Museum of Tokaj wines in the house of Ulans in AbaĂşjszĂˇntĂł",    
+                "pa_proj_act_p3":"Trilingual science - ethnographical publishment about the region of Tokaj and its wines",
+                "pa_proj_act_p4":"International Wine Conference",
+    
+                "pr_title":"implementation of the project ",
+                "pr_main_aim":"implemented activities:",
+                "pr_main_aim_p":".",
+                "pr_spec_aims":"planned activities:",
+                "pr_spec_aims_p1":".",
+                "pr_spec_aims_p2":".",
+                "pr_spec_aims_p3":".",
+                "pr_proj_act":"Download",
+                "pr_proj_act_p1":".",    
+                "pr_proj_act_p2":".",    
+                "pr_proj_act_p3":".",
+                "pr_proj_act_p4":".",
+    
+                "op_title":"our partners:",
+                "op_ke_heading":"main partner:&lt;br /&gt;koĹˇice",
+                "op_ke_b1_p1":"The city has a rich and glorious past. It starts with the first mention of a community here in a document from the year 1230, when KoĹˇice is referred to as Villa Cassa. The city itself was founded by the original local Slavs and Hungarian settlers together with the German colonists from Lower Saxony in the year 1243. ",
+                "op_ke_b1_p2":"t is assumed that in 1290 KoĹˇice acquired town privileges, with the right to hold markets and fairs, collect taxes and build fortified walls. Further privileges granted in 1342 and 1347 gave KoĹˇice the status of a free royal town, ranking it as one of the leading centers of Greater Hungary. Then in 1369 King Luis the Great granted KoĹˇice a coat of arms, making it absolutely the first town in Europe to use such a symbol on the basis of a royal armorial warrant.",
+                "op_ke_b1_p3":"Despite repeated armed clashes for the next four centuries, during this time the Jesuits were able to make KoĹˇice a seat of learning with its own university and secondary schools.",
+                "op_ke_b2_p1":"By the end of the 19th century KoĹˇice had developed into one of the most important industrial cities in the region. In 1918 KoĹˇice became part of the first Czechoslovak Republic. ",
+                "op_ke_b2_p2":"From the 1950â€™s onwards the city experienced growth, accelerated mainly by the building of the East Slovakian Steelworks. In the space of one generation there was a five-fold increase in the cityâ€™s population, and a twenty-fold expansion in its built-up area.",
+                "op_ke_b2_p3":"During its long time history Kosice has also been considered the gateway to the world famous Tokaj Wine region. ",
 
-        <script type='text/javascript' src='./jquery.sk.json'></script>
-        <script type='text/javascript' src='example.sk.json'></script>
+                "op_mc_heading":"miskolc",
+                "op_mc_b1_p1":"Miskolc is the largest city in the north of Hungary located in the unique natural environment of BĂĽkk mountain. Currently it is a home of more than 170 thousand inhabitants, and with its splendid surroundings offers many interesting sights. The traditional and currently also re-developing wine culture is related to the historical Tokaj Wine Road.",
+                "op_mc_b1_p2":"The area has been occupied by Hungarians since the Conquest of Homeland in the late 9th century. It was named after the MiskĂłc clan and was first mentioned by this name around 1210 AD.",
+                "op_mc_b1_p3":"The MiskĂłc clan lost their power when King Charles I centralized his power by curbing the power of the oligarchs.",
+                "op_mc_b2_p1":"Miskolc was elevated to the rank of oppidum (market town) in 1365 by King Louis I. He also had the castle of the nearby town DiĂłsgyĹ‘r (now a district of Miskolc) transformed into a Gothic fortress. ",
+                "op_mc_b2_p2":"It was during these years that Miskolc became an important centre of wine-growing. ",
+                "op_mc_b2_p3":"Cellar rows (a rare cellar system composed of 450 cellars) are waiting for the lovers of cultivated wines during the local wine festivals or organized visits to the cellars.",
 
+                "op_ab_heading":"abaĂşjszĂˇntĂł",
+                "op_ab_b1_p1":"AbaĂşjszĂˇntĂł originated at the border of two regions â€“ AbaĂşj and ZemplĂ©n â€“ along an important trade road connecting the cities of Tokaj â€“ KoĹˇice and Debrecen with the Polish Cracow. It has been for centuries and still is at present an economic and cultural cenÂ¬tre of the region.",
+                "op_ab_b1_p2":"Thanks to its convenient location, citizensâ€� class started to shape up and the municipality was awarded the status of a town (oppidum) in the 15th century, with a substantial number of craftsmen and merchants. ",
+                "op_ab_b1_p3":"Up to this date, the town preserved its central role gained throughout its history and it continues to be one of the trade and cultural centers of the region. In 2004, AbaĂşjszĂˇntĂł was awarded the status of a city thanks to a well elaborated land-use plan.",
+                "op_ab_b2_p1":"In 2002, the historical wine and cultural region of Tokaj became a part of the world cultural heritage. ",
+                "op_ab_b2_p2":"The stream on the outskirts of the city is used in the healing spa which is curÂ¬rently under reconstruction.",
+                "op_ab_b2_p3":"Cellar rows (a rare cellar system composed of 450 cellars) are waiting for the lovers of cultivated wines during the local wine festivals or organized visits to the cellars.",
 
+                "ga_title":"gallery",
+                "ga_img_title1":"title",
+                "ga_img_title2":"title",
+                "ga_img_title3":"title",
+                "ga_img_title4":"title",
+                "ga_img_title5":"title",
+                "ga_img_title6":"title",
+                "ga_img_title7":"title",
+                "ga_img_title8":"title",
+    
+                "co_title":"contact"
+            };
+            
+            jQuery.i18n.sk.strings = {
+                "about_project": "O projekte",
+                "project_aims":"Ciele projektu",
+                "project_realization":"Realizácia projektu",
+                "project_partners":"Partneri projektu",
+                "gallery":"Galéria",
+                "contact":"Kontakt",
 
+                "about_project2":"O projekte",
+                "project_aims2":"Ciele projektu",
+                "project_realization2":"Realizácia projektu",
+                "project_partners2":"Partneri projektu",
+                "gallery2":"Galéria",
+                "contact2":"Kontakt",
+    
+                "iap_title":"informácie o projekte",
+                "iap_left_brief_1":"Tokajská vínna cesta vychádza z histórie veľkých obchodných ciest v Európe. V súčasnosti ponúka možnosť zoznámiť sa priamo vo vinohradníckej oblasti Tokaj s históriou, technológiou pestovania hrozna priamo vo vinohradoch a výrobou tokajského vína v stredovekých pivniciach. Zážitok s návštevy a poznania sa precíti ochutnávkami vína a regionálnych špecialít. Jej obohatením je miestny folklór, kultúrne podujatia, festivaly a návštevy historických pamiatok.",
+                "iap_left_brief_2":"Návšteva vinohradníckej oblasti Tokaj so stredovekými vinnými pivnicami, kde možno ochutnať v tej najlepšej atmosfére tokajské vína dozrievajúce v drevených dubových sudoch niekoľko rokov je zážitkom, na ktorý sa nezabúda.",
+                "iap_right_top":"Projekt s oficiálnym názvom Rozvoj spolupráce partnerských miest na historickej Tokajskej vinnej ceste bol schválený Spoločným monitorovacím výborom pre program cezhraničnej spolupráce Maďarská republika – Slovenská republika dňa 26. apríla 2012.Projekt je financovaný: 85% z ERDF, 10% zo štátneho rozpočtu a 5% z vlastných zdrojov.",
+                "iap_right_lc_1":"Akronym (skrátený názov):",
+                "iap_right_rc_1":"Tokajská vínna cesta",
+                "iap_right_lc_2":"Názov projektu:",
+                "iap_right_rc_2":"Rozvoj spolupráce partnerských miest na historickej Tokajskej vinnej ceste",
+                "iap_right_lc_3":"Kód projektu:",
+                "iap_right_rc_3":"HUSK/1101/1.3.1/0117",
+                "iap_right_lc_4":"Operačný program:",
+                "iap_right_rc_4":"Program cezhraničnej spolupráce Maďarská republika – Slovenská republika 2007 - 2013",
+                "iap_right_lc_5":"Prioritná os:",
+                "iap_right_rc_5":"1. Hospodárstvo a spoločnosť",
+                "iap_right_lc_6":"Oblasť podpory:",
+                "iap_right_rc_6":"1.3 Rozvoj spoločného turizmu",
+                "iap_right_lc_7":"Opatrenie:",
+                "iap_right_rc_7":"1.3.1 Spoločný rozvoj produktov turizmu, atrakcií, organizácií destilačného manažmentu a súvisiacej infraštruktúry",
+                "iap_right_lc_8":"Celkový projektový rozpočet:",
+                "iap_right_rc_8":"497 552,48.- EUR",
+                "iap_right_lc_9":"Schválený rozpočet pre mesto Košice:",
+                "iap_right_rc_9":"165 302,50.- EUR",
+                "iap_right_lc_10":"Rozpočet pre mesto Abaújszántó:",
+                "iap_right_rc_10":"282 249,98.- EUR",
+                "iap_right_lc_11":"Rozpočet pre Župné mesto Miskolc:",
+                "iap_right_rc_11":"50 000.- EUR", 
+                "iap_right_lc_12":"Začiatok implementácie projektu:",
+                "iap_right_rc_12":"1. októbra  2012",
+                "iap_right_lc_13":"Koniec projektových aktivít:",
+                "iap_right_rc_13":"30. septembra  2014",
+    
+                "pa_title":"ciele projektu",
+                "pa_main_aim":"hlavný cieľ projektu:",
+                "pa_main_aim_p":"Vzájomné oboznámenie ľudí na oboch stranách hraníc so svojimi stáročnými kultúrnymi tradíciami, budovanie a posilnenie existujúcich partnerských vzťahov a prehlbovanie vzájomne prospešnej spolupráce",
+                "pa_spec_aims":"špecifické ciele:",
+                "pa_spec_aims_p1":"Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice",
+                "pa_spec_aims_p2":"Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom",
+                "pa_spec_aims_p3":"V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu \"Tokajskej vínnej cesty\" - cesty priateľstva, spolupráce a dobrej nálady.",
+                "pa_proj_act":"aktivity projektu:",
+                "pa_proj_act_p1":"Založenie vinárskeho múzea v Košiciach",    
+                "pa_proj_act_p2":"Založenie Múzeum tokajských vín v Dome ulánov v Abaújszántó",    
+                "pa_proj_act_p3":"Trojjazyčná vedecko - populizačná kniha o regióne Tokaj a tokajských vínach",
+                "pa_proj_act_p4":"Medzinárodná vinárska konferencia",
+    
+                "pr_title":"realizácia projektu",
+                "pr_main_aim":"realizované aktivity:",
+                "pr_main_aim_p":".",
+                "pr_spec_aims":"plánované aktivity:",
+                "pr_spec_aims_p1":".",
+                "pr_spec_aims_p2":".",
+                "pr_spec_aims_p3":".",
+                "pr_proj_act":"Na stiahnutie",
+                "pr_proj_act_p1":".",    
+                "pr_proj_act_p2":".",    
+                "pr_proj_act_p3":".",
+                "pr_proj_act_p4":".",
+    
+                "op_title":"naši partneri:",
+                "op_ke_heading":"vedúci partner:&lt;br /&gt;mesto košice",
+                "op_ke_b1_p1":"Patrí k mestám s bohatou a slávnou minulosťou. Prvá písomná zmienka o meste je z roku 1230, kde sa spomína ako „Villa Cassa“. Samotné Košice založili nemeckí kolonisti z Dolného Saska spolu s miestnymi slovanskými starousadlíkmi po roku 1243. Predpokladá sa, že v roku 1290 Košice dostali mestské výsady a právo opevniť mesto hradbami a organizovať trhy. ",
+                "op_ke_b1_p2":"Privilégiami z rokov 1342 a 1347 sa stali slobodným kráľovským mestom a zaradili sa medzi popredné centrá Uhorska. V roku 1369 kráľ Ľudovít Veľký udelil Košiciam erb. Bol to prvý mestský znak v Európe vôbec, podložený kráľovskou erbovou listinou.",
+                "op_ke_b1_p3":"Po období ekonomického rozkvetu a relatívneho mieru v 14. a 15. storočí prežívali Košice v 16. a 17. storočí stagnáciu spôsobenú tureckým ohrozením krajiny, protireformáciou a radom stavovských povstaní proti Habsburgovcom. ",
+                "op_ke_b2_p1":"Napriek týmto ozbrojeným konfliktom sa mesto stalo aj sídlom univerzity a stredného školstva, spojeného s rekatolizáciou. Koncom 19. storočia sa Košice stali významným priemyselným centrom regiónu. V roku 1918 sa stali súčasťou Československej republiky.",
+                "op_ke_b2_p2":"Od päťdesiatych rokov sa začal rýchly rast, ktorý akceleroval hlavne výstavbou Východoslovenských železiarní. Počet obyvateľov mesta sa vtedy za jednu generáciu späťnásobil a zastavaná plocha zdvadsaťnásobila.",
+                "op_ke_b2_p3":"Počas svojej dlhej histórie Košice považovali aj za bránu svetoznámej historickej Tokajskej vinárskej oblasti.",
+    
+                "op_mc_heading":"mesto miškovec",
+                "op_mc_b1_p1":"Miškovec (maď. Miskolc) je mesto na severovýchode Maďarska, leží v krásnom prírodnom prostredí pohoria Bükk. Toho času má okolo 170 000 obyvateľov. ",
+                "op_mc_b1_p2":"Okolie mesta ponúka svojim návštevníkom veľa pozoruhodností a turistických atrakcií. Tradičná vínna kultúra, ktorá sa nedávno začala znovu rozvíjať nadväzuje na historickú Tokajskú vínnu cestu. ",
+                "op_mc_b1_p3":"Oblasť mesta obývajú Maďari od čias zaujatia vlasti v 9 storočí. Názov mesta pochádza od vplyvného rodu Miškovcov (Anonymova kronika: Miscoucy; 1281: Myskouch, 1320: Miscolch).",
+                "op_mc_b2_p1":"Mesto prosperovalo až do doby tureckej okupácie krajiny. Ku koncu 17. storočia sa stalo významným vinohradníckym a poľnohospodárskym strediskom s 13 cechmi a s významnou populáciou.",  
+                "op_mc_b2_p2":"Miskolc bol aj významným obchodným centrom regiónu, jeho najdôležitejším obchodným artiklom bolo víno. ",
+                "op_mc_b2_p3":"V okolí mesta na svahoch vrchu Avas dodnes nájdeme okolo 500 autentických pivníc, ktoré svedčia o bohatej vinárskej kultúre mesta.",
+   
+                "op_ab_heading":"mesto abaújszántó",
+                "op_ab_b1_p1":"Mesto Abaújszántó vzniklo na pomedzí dvoch regiónov Abaúj a Zem¬plín pozdĺž dôležitej obchodnej cesty spájajúcej mestá Tokaj – Košice a Debrecen s poľským Krakovom. ",
+                "op_ab_b1_p2":"Celé stáročia bolo a dodnes je hospodárskym a kultúrnym centrom regiónu. Vďaka svojej priaznivej polohe sa v meste rýchlo začala formovať meštianska vrstva a v 15. storočí obec získala štatút mestečka (oppidum, mezőváros), s význam¬ným počtom remeselníkov a obchodníkov. ",
+                "op_ab_b1_p3":"Vynikalo skvelými vínami, ktoré sa dostali aj na zahraničné trhy. Strediskovú rolu vytvorenú počas histórie si mesto zachovalo dodnes, naďalej je jedným z obchodných a kultúrnych centier regiónu. ",
+                "op_ab_b2_p1":"Vďaka premyslenému územnému plánu v roku 2004 Abaújszántó znova získalo štatút mesta.Od roku 2002 historický vinársky región a kultúrna oblasť Tokaj sa stali súčasťou svetového kultúrneho dedičstva.",
+                "op_ab_b2_p2":"Počas storočí v Abaújszántó vybudovali mnoho hodnotných budov. V meste nájdeme kostoly piatich náboženstiev.Prameň na okraji mesta sa používa v liečebných kúpeľoch, ktoré sú toho času v rekonštrukcii.",
+                "op_ab_b2_p3":"Rady pivníc (ojedinelý systém pivníc skladajúci sa zo 450 pivníc) čaka¬jú na milovníkov šľachetných vín počas miestnych vinárskych slávností, prípadne organizovaných návštev v pivniciach",
+    
+                "ga_title":"galéria",
+                "ga_img_title1":"názov",
+                "ga_img_title2":"názov",
+                "ga_img_title3":"názov",
+                "ga_img_title4":"názov",
+                "ga_img_title5":"názov",
+                "ga_img_title6":"názov",
+                "ga_img_title7":"názov",
+                "ga_img_title8":"názov",
+    
+                "co_title":"kontakt" 
+       
+            };
+
+            
+            jQuery.i18n.hu.strings = {
+                "about_project": "A projektről",
+                "project_aims":"A projekt céljai",
+                "project_realization":"A projekt tevékenységei",
+                "project_partners":"Partnerek",
+                "gallery":"Képtár",
+                "contact":"Kapcsolat",
+                "about_project2": "A projektről",
+                "project_aims2":"A projekt céljai",
+                "project_realization2":"A projekt tevékenységei",
+                "project_partners2":"Partnerek",
+                "gallery2":"Képtár",
+                "contact2":"Kapcsolat",
+    
+                "iap_title":"információk a projektről",
+                "iap_left_brief_1":"A Tokaji borút az Európai történelmi kereskedelmi nagyobb útvonalak alapján jött létre. Jelenleg megismerkedési lehetőségeket kínál a borvidék történetével, szőlőművelés technológiával közvetlenül a szőlőskertekben és a középkori pincékben a tokaji bor termelésével. A látogatási élményt borkóstolókkal és helyi specialitásokkal lehet átérezni. Dúsítása a helyi folklór, kulturális rendezvények, fesztiválok és a történelmi emlékhelyek látogatása.",
+                "iap_left_brief_2":"A tokaji borvidék középkori pincék látogatása és a tölgyfahordókban ért több éves tokaji borok legjobb környezetében megkóstolása, el nem felejtetlen.",
+                "iap_right_top":"A projekt hivatalos neve alapján: \"Partnervárosok együttműködésének fejlesztése a történelmi Tokaji Borút mentén\" 2012. Április 26.-án a Magyarország-Szlovákia Határon Átnyúló Együttműködési Program Közös monitoring bizottságával jóváhagyásával jött létre. A projektet 85%-ban az ERFA, 10%-át az állami költségvetés és az 5%-a saját források alapján finanszírozott.",
+                "iap_right_lc_1":"Betűszó (rövid név):",
+                "iap_right_rc_1":"Tokaji Borút",
+                "iap_right_lc_2":"Projekt neve:",
+                "iap_right_rc_2":"Partnervárosok együttműködésének fejlesztése a történelmi Tokaji Borút mentén",
+                "iap_right_lc_3":"Hivatkozási szám:",
+                "iap_right_rc_3":"HUSK/1101/1.3.1/0117",
+                "iap_right_lc_4":"Operatív Program:",
+                "iap_right_rc_4":"Magyarország-Szlovákia Határon Átnyúló Együttműködési Program 2007-2013",
+                "iap_right_lc_5":"Prioritási tengely:",
+                "iap_right_rc_5":"1. Gazdaság és társadalom",
+                "iap_right_lc_6":"Támogatott kerület:",
+                "iap_right_rc_6":"1.3 Közös turizmusfejlesztés",
+                "iap_right_lc_7":"Pályázat:",
+                "iap_right_rc_7":"1.3.1 Turisztikai termékek és vonzerők fejlesztése, desztináció-menedzsment szervezetek és kapcsolódó infrastruktúra felállítása",
+                "iap_right_lc_8":"A projekt teljes költségvetése:",
+                "iap_right_rc_8":"497 552,48.- EUR",
+                "iap_right_lc_9":"Kassa város költségvetése: ",
+                "iap_right_rc_9":"165 302,50.- EUR",
+                "iap_right_lc_10":"Abaújszántó város költségvetése:",
+                "iap_right_rc_10":"282 249,98.- EUR",
+                "iap_right_lc_11":"Miskolc város költségvetése:",
+                "iap_right_rc_11":"50 000.- EUR", 
+                "iap_right_lc_12":"A projekt végrehajtásának kezdete: ",
+                "iap_right_rc_12":"1. októbra  2012",
+                "iap_right_lc_13":"A projekt tevékenységeinek vége:",
+                "iap_right_rc_13":"30. septembra  2014",
+    
+                "pa_title":"a projekt céljai",
+                "pa_main_aim":"fő cél:",
+                "pa_main_aim_p":"A helyi és a szélesebb közösségek kölcsönösen megismerjék a magyar-szlovák határ két oldalán található több száz éves sajátos borkultúrákat és a létező partnerségek és kölcsönösen hasznos együttműködés megerősítése.",
+                "pa_spec_aims":"specifikus célok:",
+                "pa_spec_aims_p1":"A közös kulturális - történelmi hagyományok tudatosság növelése, a közös hagyományok, szokások és a mindkét határ oldalán az évszázados dicsőséges borkultúra újjáéledését",
+                "pa_spec_aims_p2":"Közös turisztikai termékek alkotása és fejlesztése, mint a közös megértés és barátság alapjai építése a történelmi régiók lakosai között",
+                "pa_spec_aims_p3":"Az Európa Kulturális Fővárosa rendezvényei alapján a \"Tokaj Borút\" hagyományai megújítása - a barátság, együttműködés és a legjobb hangulat útjai.",
+                "pa_proj_act":"a projekt tevékenységei:",
+                "pa_proj_act_p1":"Kassai bor múzeum létrehozása",    
+                "pa_proj_act_p2":"Tokaji borok múzeuma létrehozása az Ulánok házában Abaújszántón",    
+                "pa_proj_act_p3":"Háromnyelvű tudomány - néprajzi könyv a Tokaji régióról és borjairól",
+                "pa_proj_act_p4":"Nemzetközi Bor konferencia",
+    
+                "pr_title":"projekt végrehajtása",
+                "pr_main_aim":"végrehajtott tevékenységek:",
+                "pr_main_aim_p":".",
+                "pr_spec_aims":"tervezett tevékenységek",
+                "pr_spec_aims_p1":".",
+                "pr_spec_aims_p2":".",
+                "pr_spec_aims_p3":".",
+                "pr_proj_act":"letölthető",
+                "pr_proj_act_p1":".",    
+                "pr_proj_act_p2":".",    
+                "pr_proj_act_p3":".",
+                "pr_proj_act_p4":".",
+    
+                "op_title":"partnereink:",
+                "op_ke_heading":"fő partner:&lt;br /&gt;kassa",
+                "op_ke_b1_p1":"Kassának nagyon gazdag és dicső történelme van.A város első írásos emléke 1230-ból való. Kassa ebben Villa Cassa-ként szerepel. Magát a várost az alsó-szászországi német telepesek alapították a helyi szláv őslakossággal együtt 1243 után. Feltételezzük, hogy 1290-ben Kassa városi rangra emelkedett vásártartás, adószedés és városfal építésének a jogával. ",
+                "op_ke_b1_p2":"Az 1342-ből és 1347-ből származó jogok alapján Kassa szabad királyi város lett, és Magyarország vezető központjai közé került. 1369-ben Nagy Lajos király címert adományozott Kassának. Ez az első városi címer Európában, amelyet királyi címerlevél erősített meg. ",
+                "op_ke_b1_p3":"A 14. és 15. században uralkodó gazdasági virágzás és viszonylagos béke után a 16. és 17. században Kassa városára nagyon zavaros idők jöttek, melyeket a török hódoltság, az ellenreformáció és a rendi felkelések sora is fokozott. ",
+                "op_ke_b2_p1":"A fegyverzaj ellenére a város ebben az időben lett egyetemváros és ekkor indult be a középfokú oktatás a rekatolizációval a háttérben. ",
+                "op_ke_b2_p2":"A 19. század végére az egyik legjelentősebb ipari várossá nőtte ki magát az akkori Magyarországon. 1918-ban Kassa a Csehszlovák Köztársaság része lett. Az ötvenes évektől gyors növekedésnek indult, amit főleg a Kelet-Szlovákiai Vasmű építése lendített fel.",
+                "op_ke_b2_p3":"Évszázados történelme folyamán Kassa a világhírű Tokaji Borvidék kapujának is számított. ",
+
+                "op_mc_heading":"miskolc",
+                "op_mc_b1_p1":"Miskolc Észak-Magyarország legnagyobb városa és Borsod-Abaúj-Zemplén megye székhelye, nagyon szép természeti környezetben a Bükk hegység keleti oldalán fekszik. Jelenleg mintegy 170 000 lakosnak az otthona, s a város és környéke nagyon sok látnivalót kínál az idelátogató turistáknak.A hagyományos borkultúra, amelyik ismét fejlődésnek indult a városban a történelmi Tokaji Borúthoz kapcsolódik.",
+                "op_mc_b1_p2":"A magyarok a 9. századtól, a honfoglalás kora óta lakják a területet. A hely a Miskóc nemzetségről kapta nevét, elsőként Anonymus említi ezen a néven a Gesta Hungarorumban 1173 körül. ",
+                "op_mc_b1_p3":"A Miskóc nemzetség, amely a megyének is nevet adó Bors nemzetség egyik ága volt, 1312-ben veszítette el a területet Károly Róbert központosító törekvései következményeként. ",
+                "op_mc_b2_p1":"Miskolcot Nagy Lajos király emelte mezővárosi rangra 1365-ben, nagyjából ugyanabban az időben, amikor a közeli diósgyőri várat is felújíttatta, s ez az Anjou kori Magyarország egyik legjelentősebb erődítménye, egyben királyi rezidenciája lett.",
+                "op_mc_b2_p2":"A város gyorsan fejlődött egészen a török hódoltságig. A 17. század vége felé már jelentős lakossága van, fontos borászati és mezőgazdasági központ, s a területén 13 céh működik. ",
+                "op_mc_b2_p3":"Miskolc történelme folyamán a régió fontos kereskedelmi központja volt, legfontosabb árucikke a bor volt. A város környékén az Avas lejtőin a mai napig mintegy 500 hangulatos pince található, amelyek tanúskodnak a város gazdag borászati hagyományairól.",
+   
+                "op_ab_heading":"Abaújszántó",
+                "op_ab_b1_p1":"Abaújszántó két régió, Abaúj és Zemplén találkozásánál a Tokajt Kassával, Debrecent Krakkóval összekötő fontos kereskedelmi útvonal mentén létrejött település. Évszázadok óta a vidék gazda¬sági, kulturális központja. ",
+                "op_ab_b1_p2":"Kedvező fekvése révén hamar megin¬dult polgárosodása és a 15. században mezővárosi rangra emelkedett jelentős számú kézműves és kereskedő réteggel. Kitűnő borai külföldre is eljutottak. Történelmileg kialakult központi szerepét napjainkban is megőrizte, egyik kereskedelmi és kulturális központja régiónknak.",
+                "op_ab_b1_p3":"Az átgondolt településfej¬lesztések révén 2004-től újra városi rangra emelkedett.A 2002. évtől a Tokaj Történelmi Borvidék és Kultúrtáj Világörökség része.",
+                "op_ab_b2_p1":"Az évszázadok során Abaújszántó számos értékes épülettel gazdagodott. Öt felekezet temploma található meg a városban. ",
+                "op_ab_b2_p2":"A település szélén feltörő forrásvizét használja fel a város (jelenleg felújítás alatt álló) kedvelt strand- és a gyógyfürdője. ",
+                "op_ab_b2_p3":"Pincesorai (szinte egyedülálló a 450 pincéből álló pincerendszer) a nemes borok kedvelőit várják a borünnepeken és a szervezett pincelátogatások al¬kalmával is.",
+    
+                "ga_title":"képtár",
+                "ga_img_title1":"Cím",
+                "ga_img_title2":"Cím",
+                "ga_img_title3":"Cím",
+                "ga_img_title4":"Cím",
+                "ga_img_title5":"Cím",
+                "ga_img_title6":"Cím",
+                "ga_img_title7":"Cím",
+                "ga_img_title8":"Cím",
+    
+                "co_title":"kapcsolat"      
+            };
+
+            
+            
+            
+        </script>
 
         <script type="text/javascript">
             $(document).ready(
@@ -79,7 +423,7 @@
                     if ($(this).scrollTop() > sticky_menu_actual_offset ) {
 
                         // change style of a sticky menu
-                        nav.addClass("sticky_menu_class_flying");
+                        nav.addClass("f-nav");
 
                         // add invisible object
                         nav_hidden.css( "display", "block" );
@@ -87,7 +431,7 @@
                     } else {
 
                         // set the style back
-                        nav.removeClass("sticky_menu_class_flying");
+                        nav.removeClass("f-nav");
 
                         // remove the object
                         nav_hidden.css( "visibility", "invisible" );
@@ -139,12 +483,30 @@
                     if( arrayOfActualSelectorSufixes.indexOf("sk") == -1 ){
                         $(this).attr('id',"i18n_lang_" + "sk" );
                         $(this).html('sk');
+                        $(this).parent().removeClass();
+                        if($(window).width() <= 770){
+                            $(this).parent().addClass("id_sticky_menu_sk_flag_770"); 
+                        }else{
+                            $(this).parent().addClass("id_sticky_menu_sk_flag"); 
+                        }                         
                     }else if( arrayOfActualSelectorSufixes.indexOf("hu") == -1 ){
                         $(this).attr('id',"i18n_lang_" + "hu" );
                         $(this).html('hu');
+                        $(this).parent().removeClass();
+                        if($(window).width() <= 770){
+                            $(this).parent().addClass("id_sticky_menu_hu_flag_770"); 
+                        }else{
+                            $(this).parent().addClass("id_sticky_menu_hu_flag"); 
+                        }               
                     }else if( arrayOfActualSelectorSufixes.indexOf("en") == -1 ){
                         $(this).attr('id',"i18n_lang_" + "en" );
                         $(this).html('en');
+                        $(this).parent().removeClass();
+                        if($(window).width() <= 770){
+                            $(this).parent().addClass("id_sticky_menu_en_flag_770"); 
+                        }else{
+                            $(this).parent().addClass("id_sticky_menu_en_flag"); 
+                        }                         
                     }
 
                 }
@@ -228,7 +590,7 @@
             <div id="sticky_menu" class="sticky_menu_class">
                 <!--left part-->
                 <div id="sticky_menu_wrapper_left">
-                    <div class="sticky_menu_item hoverable">
+                    <div class="id_sticky_menu_en_flag sticky_menu_item">
                         <div id="i18n_lang_en" class="sticky_menu_item_text language_selector">en</div>
                     </div>
                 </div>
@@ -282,7 +644,7 @@
                 </div>
                 <!-- right part -->
                 <div id="sticky_menu_wrapper_right">
-                    <div class="sticky_menu_item hoverable">
+                    <div class="id_sticky_menu_hu_flag sticky_menu_item">
                         <div id="i18n_lang_hu" class="sticky_menu_item_text language_selector">hu</div>
                     </div>
                 </div>
@@ -719,12 +1081,12 @@
                             <div class="block_item">
                                 <div class="block_item_title">
                                     <div id="i18n_pr_main_aim" class="i18n_text">
-                                        hlavný cieľ projektu:
+                                        Novinky
                                     </div>
                                 </div>
                                 <div class="common_text">
                                     <div id="i18n_pr_main_aim_p" class="i18n_text">
-                                        Vzájomné oboznámenie ľudí na oboch stranách hraníc so svojimi stáročnými kultúrnymi tradíciami, budovanie a posilnenie existujúcich partnerských vzťahov a prehlbovanie vzájomne prospešnej spolupráce
+                                        .
                                     </div>
                                 </div>
                             </div>
@@ -736,24 +1098,24 @@
                             <div class="block_item">
                                 <div class="block_item_title">
                                     <div id="i18n_pr_spec_aims" class="i18n_text">
-                                        špecifické ciele:
+                                        Realizované aktivity
                                     </div>
                                 </div>
                                 <div class="common_text">
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_pr_spec_aims_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                .
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_pr_spec_aims_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                .
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_pr_spec_aims_p3" class="i18n_text">
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                .
                                             </span>
                                         </li>
                                     </ul>
@@ -767,29 +1129,29 @@
                             <div class="block_item">
                                 <div class="block_item_title">
                                     <div id="i18n_pr_proj_act" class="i18n_text">
-                                        aktivity projektu:
+                                        Na stiahnutie:
                                     </div>
                                 </div>
                                 <div class="common_text">
                                     <ul class="dash_circle">
                                         <li>
                                             <span id="i18n_pr_proj_act_p1" class="i18n_text">
-                                                Založenie vinárskeho múzea v Košiciach
+                                                .
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_pr_proj_act_p2" class="i18n_text">
-                                                Založenie Múzeum tokajských vín v Dome ulánov v Abaújszántó
+                                                .
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_pr_proj_act_p3" class="i18n_text">
-                                                Trojjazyčná vedecko - populizačná kniha o regióne Tokaj a tokajských vínach
+                                                .
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_pr_proj_act_p4" class="i18n_text">
-                                                Medzinárodná vinárska konferencia
+                                                .
                                             </span>
                                         </li>
                                     </ul>
@@ -836,12 +1198,12 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_ke_b1_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                Patrí k mestám s bohatou a slávnou minulosťou. Prvá písomná zmienka o meste je z roku 1230, kde sa spomína ako „Villa Cassa“. Samotné Košice založili nemeckí kolonisti z Dolného Saska spolu s miestnymi slovanskými starousadlíkmi po roku 1243. Predpokladá sa, že v roku 1290 Košice dostali mestské výsady a právo opevniť mesto hradbami a organizovať trhy.
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_op_ke_b1_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                Privilégiami z rokov 1342 a 1347 sa stali slobodným kráľovským mestom a zaradili sa medzi popredné centrá Uhorska. V roku 1369 kráľ Ľudovít Veľký udelil Košiciam erb. Bol to prvý mestský znak v Európe vôbec, podložený kráľovskou erbovou listinou.
                                             </span>
                                         </li>
                                     </ul>
@@ -852,7 +1214,7 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_ke_b1_p3" class="i18n_text">
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                Po období ekonomického rozkvetu a relatívneho mieru v 14. a 15. storočí prežívali Košice v 16. a 17. storočí stagnáciu spôsobenú tureckým ohrozením krajiny, protireformáciou a radom stavovských povstaní proti Habsburgovcom.
                                             </span>
                                         </li>
                                     </ul>
@@ -865,12 +1227,12 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_ke_b2_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                Napriek týmto ozbrojeným konfliktom sa mesto stalo aj sídlom univerzity a stredného školstva, spojeného s rekatolizáciou. Koncom 19. storočia sa Košice stali významným priemyselným centrom regiónu. V roku 1918 sa stali súčasťou Československej republiky.
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_op_ke_b2_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                Od päťdesiatych rokov sa začal rýchly rast, ktorý akceleroval hlavne výstavbou Východoslovenských železiarní. Počet obyvateľov mesta sa vtedy za jednu generáciu späťnásobil a zastavaná plocha zdvadsaťnásobila.
                                             </span>
                                         </li>
                                     </ul>
@@ -880,7 +1242,7 @@
                                         <ul class="dash_exp_pref">
                                             <li>
                                                 <span id="i18n_op_ke_b2_p3" class="i18n_text">
-                                                    V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                    Počas svojej dlhej histórie Košice považovali aj za bránu svetoznámej historickej Tokajskej vinárskej oblasti.
                                                 </span>
                                             </li>
                                         </ul>
@@ -909,7 +1271,7 @@
                             <img src="css/images/erb_mi.png" alt="Miskolc erb" />
                             <div class="partners_logo_desc">
                                 <div id="i18n_op_mc_heading" class="i18n_text">
-                                    mesto miskolc
+                                    mesto miškovec
                                 </div>
                             </div>
                         </div>
@@ -919,12 +1281,12 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_mc_b1_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                Miškovec (maď. Miskolc) je mesto na severovýchode Maďarska, leží v krásnom prírodnom prostredí pohoria Bükk. Toho času má okolo 170 000 obyvateľov. 
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_op_mc_b1_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                Okolie mesta ponúka svojim návštevníkom veľa pozoruhodností a turistických atrakcií. Tradičná vínna kultúra, ktorá sa nedávno začala znovu rozvíjať nadväzuje na historickú Tokajskú vínnu cestu.
                                             </span>
                                         </li>
                                     </ul>
@@ -935,7 +1297,7 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_mc_b1_p3" class="i18n_text">
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                Oblasť mesta obývajú Maďari od čias zaujatia vlasti v 9 storočí. Názov mesta pochádza od vplyvného rodu Miškovcov (Anonymova kronika: Miscoucy; 1281: Myskouch, 1320: Miscolch).
                                             </span>
                                         </li>
                                     </ul>
@@ -948,12 +1310,12 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_mc_b2_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                Mesto prosperovalo až do doby tureckej okupácie krajiny. Ku koncu 17. storočia sa stalo významným vinohradníckym a poľnohospodárskym strediskom s 13 cechmi a s významnou populáciou.
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_op_mc_b2_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                Miskolc bol aj významným obchodným centrom regiónu, jeho najdôležitejším obchodným artiklom bolo víno. 
                                             </span>
                                         </li>
                                     </ul>
@@ -963,7 +1325,7 @@
                                         <ul class="dash_exp_pref">
                                             <li>
                                                 <span id="i18n_op_mc_b2_p3" class="i18n_text">
-                                                    V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                    V okolí mesta na svahoch vrchu Avas dodnes nájdeme okolo 500 autentických pivníc, ktoré svedčia o bohatej vinárskej kultúre mesta.
                                                 </span>
                                             </li>
                                         </ul>
@@ -984,7 +1346,7 @@
                             <img src="css/images/erb_ab.png" alt="Abujszanto erb" />
                             <div class="partners_logo_desc">
                                 <div id="i18n_op_ab_heading" class="i18n_text">
-                                    mesto adujszantó
+                                    mesto abaújszántó
                                 </div>
                             </div>
                         </div>
@@ -994,12 +1356,12 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_ab_b1_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                Mesto Abaújszántó vzniklo na pomedzí dvoch regiónov Abaúj a Zem¬plín pozdĺž dôležitej obchodnej cesty spájajúcej mestá Tokaj – Košice a Debrecen s poľským Krakovom.
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_op_ab_b1_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                Celé stáročia bolo a dodnes je hospodárskym a kultúrnym centrom regiónu. Vďaka svojej priaznivej polohe sa v meste rýchlo začala formovať meštianska vrstva a v 15. storočí obec získala štatút mestečka (oppidum, mezőváros), s význam¬ným počtom remeselníkov a obchodníkov.
                                             </span>
                                         </li>
                                     </ul>
@@ -1010,7 +1372,7 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_ab_b1_p3" class="i18n_text">
-                                                V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                Vynikalo skvelými vínami, ktoré sa dostali aj na zahraničné trhy. Strediskovú rolu vytvorenú počas histórie si mesto zachovalo dodnes, naďalej je jedným z obchodných a kultúrnych centier regiónu.
                                             </span>                                            
 
                                         </li>
@@ -1024,12 +1386,12 @@
                                     <ul class="dash_exp_pref">
                                         <li>
                                             <span id="i18n_op_ab_b2_p1" class="i18n_text">
-                                                Zvýšiť povedomie občanov o spoločných kultúrno - historickiých tradíciách, oživenie a posilnenie spoločných tradícií, zvykov, oživenie stáročnej vínnej kultúry na oboch stranách hranice
+                                                Vďaka premyslenému územnému plánu v roku 2004 Abaújszántó znova získalo štatút mesta.Od roku 2002 historický vinársky región a kultúrna oblasť Tokaj sa stali súčasťou svetového kultúrneho dedičstva.
                                             </span>
                                         </li>
                                         <li>
                                             <span id="i18n_op_ab_b2_p2" class="i18n_text">
-                                                Spoločný rozvoj a vytváranie produktov turizmu ako základ budovania porozumenia a priateľstva medzi historicky spolupatričnými regiónmi a ich obyvateľstvom
+                                                Počas storočí v Abaújszántó vybudovali mnoho hodnotných budov. V meste nájdeme kostoly piatich náboženstiev.Prameň na okraji mesta sa používa v liečebných kúpeľoch, ktoré sú toho času v rekonštrukcii.
                                             </span>
                                         </li>
                                     </ul>
@@ -1039,7 +1401,7 @@
                                         <ul class="dash_exp_pref">
                                             <li>
                                                 <span id="i18n_op_ab_b2_p3" class="i18n_text">
-                                                    V nadväznosti na podujatia Európske hlavné mesto kultúry obnoviť tradíciu "Tokajskej vínnej cesty" - cesty priateľstva, spolupráce a dobrej nálady.
+                                                    Rady pivníc (ojedinelý systém pivníc skladajúci sa zo 450 pivníc) čaka¬jú na milovníkov šľachetných vín počas miestnych vinárskych slávností, prípadne organizovaných návštev v pivniciach
                                                 </span>
                                             </li>
                                         </ul>
@@ -1061,7 +1423,8 @@
             <!--end of page section wrapper-->
         </div>
         <!-- end of our partners section -->
-
+        <script type="text/javascript" src="gallerylightbox.min.js"></script>
+        <script type="text/javascript">$('body').galleryLightBox()</script>
         <!-- gallery section -->
         <div id="gallery_ps" class="page_section">
             <div class="page_section_wrapper">
@@ -1071,70 +1434,55 @@
                     </div>
                 </div>
                 <div id="gallery">
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title1" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title2" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title3" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title4" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title5" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title6" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title7" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gallery_item">
-                        <img src="css/images/gallery_picture.jpg" alt="Gallery item" />
-                        <div class="desc">
-                            <div id="i18n_ga_img_title8" class="i18n_text">
-                                názov
-                            </div>
-                        </div>
-                    </div>
+
+
+                    <div class="photos">
+                        <ul class="clearfix">
+                            <li><a href="images/photos/01.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/01t.jpg" width="150" height="150"></a></li>    
+                            <li><a href="images/photos/02.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/02t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/03.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/03t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/04.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/04t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/05.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/05t.jpg" width="150" height="150"></a></li>              
+                            <li><a href="images/photos/06.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/06t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/07.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/07t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/08.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/08t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/09.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/09t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/10.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/10t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/11.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/11t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/12.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/12t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/13.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/13t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/14.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/14t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/15.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/15t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/01.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/01t.jpg" width="150" height="150"></a></li>    
+                            <li><a href="images/photos/02.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/02t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/03.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/03t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/04.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/04t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/05.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/05t.jpg" width="150" height="150"></a></li>              
+                            <li><a href="images/photos/06.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/06t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/07.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/07t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/08.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/08t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/09.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/09t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/10.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/10t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/11.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/11t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/12.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/12t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/13.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/13t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/14.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/14t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/15.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/15t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/01.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/01t.jpg" width="150" height="150"></a></li>    
+                            <li><a href="images/photos/02.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/02t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/03.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/03t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/04.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/04t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/05.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/05t.jpg" width="150" height="150"></a></li>              
+                            <li><a href="images/photos/06.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/06t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/07.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/07t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/08.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/08t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/09.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/09t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/10.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/10t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/11.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/11t.jpg" width="150" height="150"></a></li>
+                            <li><a href="images/photos/12.jpg" rel="lightbox" title="Fotogaléria projektu Tokajská vínna cesta"><img src="images/small/12t.jpg" width="150" height="150"></a></li>
+                        </ul>
+                    </div>  
+
                     <div class="clear_both"></div>
                 </div>
                 <div class="clear_both"></div>
@@ -1150,11 +1498,62 @@
                         <div id="i18n_co_title" class="i18n_text">
                             kontakt
                         </div>
+                    </div> 
+                    <div class="section_title_wh">
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5"> Mesto Košice</FONT>
+                        </div>  
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5">Trieda SNP 48/A</FONT>
+                        </div>
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5"> 040 11 Košice</FONT>
+                        </div> 
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5"><a href="http://www.kosice.sk" style="color: white"> www.kosice.sk </a></FONT>
+                        </div>
+                        <br>
+                        </br>
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5"> Oddelenie strategického rozvoja</FONT>
+                        </div> 
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5">  -          Referát projetkov EÚ</FONT>
+                        </div> 
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5">  -          Referát marketingu, kultúry a styku so zahraničím</FONT>
+                        </div>
+
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5">   Ladislav.perhac@kosice.sk </FONT>
+                        </div> 
+
+                        <div id="i18n_co_title" class="i18n_text">
+                            <FONT SIZE="5"><a href="http://www.husk-cbc.eu" style="color: white">  www.husk-cbc.eu</a> </FONT>
+                            <br>
+                            </br>
+                            <br>
+                            </br>
+                            <div id="i18n_co_title" class="i18n_text">
+                                <FONT SIZE="3"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Copyright e-volution s.r.o. 2013</FONT>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- end of a body -->
-    </body>
-</html>
+                <!-- end of a body -->
+                <script type="text/javascript">
+                    $(function(){
+                        $('a[rel=lightbox]').lightBox({
+                            containerResizeSpeed: 250,
+                            fixedNavigation: true
+                        });
+                        $('a[rel=2ndlightbox]').lightBox({
+                            overlayBgColor: '#fff',
+                            overlayOpacity: 0.7
+                        });
+                    });
+                </script>
+
+                </body>
+                </html>

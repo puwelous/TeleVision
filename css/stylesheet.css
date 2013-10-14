@@ -21,23 +21,26 @@ html, body {
     width: 100%;
 
     font-size: 62.5%;
+
+    /*font-family: "HelveticaNeue", sans-serif;*/
 }
 
 .page_section {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    /*border: blue solid 1px;*/
 }
 
 .page_section_wrapper {
     height:100%;
     width: 85%;
-    max-width: 1024px;
-
     margin-left: auto;
     margin-right: auto;
 
     padding-top: 8%;
+
+    /*    border: blue solid 1px;*/
 }
 
 #abt_prjct_ps .page_section_wrapper {
@@ -76,29 +79,27 @@ html, body {
     background: url('./images/welcome_kosice_logo.png') no-repeat;
 }
 
-#welcome_middle_wrapper{
-
-    position: relative;
-    height: auto;
-    width:  366px;
-    margin: 0% auto;
-    margin-top: 2%;
-}
-
 #welcome_title {
 
     position: relative;
-    height: 168px;
-    max-width: 268px;
+    height: 233px;
+    max-width: 366px;
     background: url('./images/tokaj_title_logo.png') no-repeat center;
     /*background-size: 100% 100%;*/
-    margin: 0px auto;
+}
+
+#welcome_middle_wrapper{
+
+    position: relative;
+    height: 600px;
+    width:  366px;
+    margin: 2% auto 0% auto;
 }
 
 #welcome_menu {
 
     position: relative;
-    height: auto;
+    height: 342px;
     width: 366px;
     text-align: center;
 }
@@ -106,7 +107,9 @@ html, body {
 .row_class {
     vertical-align: middle;
 }
-
+.row_class:first-child {
+    margin-top: 10%;
+}
 
 #welcome_menu .welcome_menu_item_wrapper {
 
@@ -173,7 +176,7 @@ html, body {
     /*background-color: rgba(143, 72, 6, 0.65);*/
 }
 
-.sticky_menu_class_flying{ 
+.f-nav{ 
     z-index: 9999; 
     position: fixed; 
     left: 0; 
@@ -209,7 +212,7 @@ html, body {
     left:50%;
     margin-left:-345px;
 
-    /*100 px height*/
+    /*80 px height*/
     height: 100px;
     width: 690px;
 }
@@ -227,9 +230,51 @@ html, body {
     border-radius: 50%;
     border: white solid 3px;
 
-    line-height: normal;
     text-align: center;
-    
+}
+
+#sticky_menu .sticky_menu_item:hover {
+    cursor: pointer;
+}
+
+#sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
+    display: table-cell;
+
+    height: 80px;
+    width: 80px;
+
+    vertical-align: middle;
+    text-align: center;
+
+    line-height: normal;    
+
+    font-family: "helvetica_cond_bold";
+    /* 25 px */
+    font-size: 1.3em;
+
+    color: white;
+    text-transform: uppercase;
+
+    border-radius: 50%;
+    border-left: white solid 3px;
+
+    overflow: hidden;
+}
+
+#sticky_menu .sticky_menu_item .sticky_menu_item_right_cropped {
+
+    position:absolute;
+
+    top: 5px;
+    right: 6px;
+    width: 80px;
+    height: 80px;
+
+    font-size: 120%;
+
+    border-radius: 50%;
+    border-right: white solid 3px;
+
     overflow: hidden;
 }
 
@@ -248,6 +293,75 @@ html, body {
     height: 66px;
 }
 
+#sticky_menu .id_sticky_menu_en_flag {
+    position:relative;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 7px 5px;
+    border-radius: 50%;
+    border: white solid 3px;
+    text-align: center;
+
+
+    max-width: 80px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    background: url('./images/flags/flag_en.png') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;    
+}
+
+#sticky_menu .id_sticky_menu_hu_flag {
+    position:relative;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 7px 5px;
+    border-radius: 50%;
+    border: white solid 3px;
+    text-align: center;
+
+
+    max-width: 80px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    background: url('./images/flags/flag_hu.png') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;    
+}
+
+#sticky_menu .id_sticky_menu_sk_flag {
+    position:relative;
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 7px 5px;
+    border-radius: 50%;
+    border: white solid 3px;
+    text-align: center;
+
+
+    max-width: 80px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    background: url('./images/flags/flag_sk.png') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;    
+}
+
 /* end of sticky menu*/
 
 /**************** project info section ****************/
@@ -261,6 +375,8 @@ html, body {
     background-size:cover;
 }
 
+
+
 #project_info_container {
 
     position: relative;
@@ -270,7 +386,6 @@ html, body {
     max-width: 100%;
     height: auto;
 }
-
 #left_part_wrapper {
     position: relative;
     float: left;
@@ -482,14 +597,47 @@ ul.dash_circle {
 /**************** end of partners section ****************/
 
 /**************** gallery section ****************/
+
+/* gallery display */
+.photos {
+    display: block;
+}
+
+.photos ul {
+    list-style: none;
+
+}
+
+.photos ul li { display: inline; }
+
+.photos ul li a {
+    display: block;
+    float: left;
+    padding: 4px;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    opacity: 1.00;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+.photos ul li a:hover {
+    opacity: 1.0;
+}
+
+.photos ul li a img {
+    border: 6px solid #e1d9ec;
+}
+
+
 #gallery_ps {
 
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 300%;
     background: #ffffff;
     /*background-position: 50% 50%; /* for moving the background up */
-    background-size:cover;
+    background-size: cover;
 }
 
 #gallery {
@@ -499,6 +647,7 @@ ul.dash_circle {
     /*border: purple 1px solid;*/
     margin: 0px auto;
     max-width: 100%;
+
     height:auto;
 }
 
@@ -708,7 +857,7 @@ ul.dash_circle {
 @font-face {
     font-family: "helvetica_light";
     src: url("helvetica_light.eot");
-    src: local("â˜º"),
+    src: local("â?º"),
         url("helvetica_light.ttf") format("truetype"),
         url("helvetica_light.otf") format("opentype");
 }
@@ -716,7 +865,7 @@ ul.dash_circle {
 @font-face {
     font-family: "helvetica_cond_thin";
     src: url("helvetica_cond_thin.eot");
-    src: local("â˜º"),
+    src: local("â?º"),
         url("helvetica_cond_thin.ttf") format("truetype"),
         url("helvetica_cond_thin.otf") format("opentype");
 }
@@ -724,7 +873,7 @@ ul.dash_circle {
 @font-face {
     font-family: "helvetica_cond_bold";
     src: url("helvetica_cond_bold.eot");
-    src: local("â˜º"),
+    src: local("â?º"),
         url("helvetica_cond_bold.ttf") format("truetype"),
         url("helvetica_cond_bold.otf") format("opentype");
 }
@@ -843,6 +992,76 @@ ul.dash_circle {
 .i18n_text{
 
 }
+/***************************************************************************/
+
+#sticky_menu .id_sticky_menu_en_flag_770  {
+    position:relative;
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 2px 5px;
+    border-radius: 50%;
+    border: white solid 3px;
+    text-align: center;
+
+
+    max-width: 70px;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    background: url('./images/flags/flag_en.png') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;    
+}
+
+#sticky_menu .id_sticky_menu_hu_flag_770  {
+    position:relative;
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 2px 5px;
+    border-radius: 50%;
+    border: white solid 3px;
+    text-align: center;
+
+
+    max-width: 70px;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    background: url('./images/flags/flag_hu.png') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;    
+} 
+
+#sticky_menu .id_sticky_menu_sk_flag_770  {
+    position:relative;
+    float: left;
+    width: 70px;
+    height: 70px;
+    margin: 2px 5px;
+    border-radius: 50%;
+    border: white solid 3px;
+    text-align: center;
+
+
+    max-width: 70px;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    background: url('./images/flags/flag_sk.png') no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+
+    overflow: hidden;    
+} 
 
 /****************************** Media Queries ******************************/
 
@@ -956,6 +1175,13 @@ ul.dash_circle {
         border: white solid 3px;
     }
 
+    #sticky_menu .id_sticky_menu_en_flag, .id_sticky_menu_sk_flag, .id_sticky_menu_hu_flag  {
+        width: 70px;
+        height: 70px;
+        margin: 2px 5px;
+        border: white solid 3px;
+    }    
+
     #sticky_menu .sticky_menu_item .sticky_menu_item_left_cropped {
 
         height: 70px;
@@ -985,28 +1211,4 @@ ul.dash_circle {
     #abt_prjct_ps .page_section_wrapper {
         padding-top: 15px;
     }
-
-    #gallery {
-        height: 400px;
-    }
-
-    #gallery .gallery_item {
-        height:auto;
-        max-width: 30%;
-    }
-
-    #gallery .gallery_item:nth-child(4n)
-    {
-        margin-right: 4%;
-    } 
-
-    #gallery .gallery_item:nth-child(3n)
-    {
-        margin-right: 0%;
-    }
-
-    html, body {
-        height: 120%;
-    }
-
 }
